@@ -1,0 +1,11 @@
+freezone,package_name,duration,discount_percent,applies_to,notes,source,is_active
+IFZA,All UAE License Packages,2 Years,15,license_cost_only,Does not apply to visa component/add-ons,user_partner_circular_april_2026,true
+IFZA,All UAE License Packages,3 Years,20,license_cost_only,Does not apply to visa component/add-ons,user_partner_circular_april_2026,true
+IFZA,All UAE License Packages,5 Years,30,license_cost_only,Does not apply to visa component/add-ons,user_partner_circular_april_2026,true
+SHAMS,Business Setup Packages,2 Years,15,package/license_cost,Multi-year placeholder based on package architecture; verify exact live offer before publishing,phase0_architecture,true
+SHAMS,Business Setup Packages,3 Years,20,package/license_cost,Multi-year placeholder based on package architecture; verify exact live offer before publishing,phase0_architecture,true
+SHAMS,Business Setup Packages,5 Years,30,package/license_cost,Multi-year placeholder based on package architecture; verify exact live offer before publishing,phase0_architecture,true
+DMCC,Jump Start Package,Offer,10,package_price,Business Acceleration Offer visible on official page,dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,Offer,5,package_price,Business Acceleration Offer visible on official page,dmcc_official_business_setup_packages,true
+DMCC,Ecosystem Packages,Second Year Renewal,50,renewal_fee,Official ecosystem package benefit,dmcc_official_business_setup_packages,true
+DMCC,Nook Package,Third Year Renewal,30,renewal_fee,Official Nook package benefit,dmcc_official_business_setup_packages,true

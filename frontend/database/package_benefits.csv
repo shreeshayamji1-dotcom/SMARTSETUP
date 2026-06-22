@@ -1,0 +1,1200 @@
+﻿freezone,package_name,sort_order,benefit,source,is_active
+SHAMS,Media Package,1,100% foreign ownership,shams_packages_page,true
+SHAMS,Media Package,2,License issued as LLC,shams_packages_page,true
+SHAMS,Media Package,3,Up to 5 media activities,shams_packages_page,true
+SHAMS,Media Package,4,No NOC required,shams_packages_page,true
+SHAMS,Media Package,5,Flexi desk & Lease Agreement provided,shams_packages_page,true
+SHAMS,Standard Package,1,100% foreign ownership,shams_packages_page,true
+SHAMS,Standard Package,2,License issued as LLC,shams_packages_page,true
+SHAMS,Standard Package,3,Any 5 business activities,shams_packages_page,true
+SHAMS,Standard Package,4,No NOC required,shams_packages_page,true
+SHAMS,Standard Package,5,Flexi desk & Lease Agreement provided,shams_packages_page,true
+IFZA,IFZA UAE Packages,1,3 shareholders,user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,2,3 cross-business activities,user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,3,License,user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,4,1 year Free Flexi-desk access,user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,5,Bank account opening,user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,6,Certificate of formation,user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,7,ULA (Unit Lease Agreement for bank purpose),user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,8,MoA and A&A,user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,9,Resolution,user_partner_circular_april_2026,true
+IFZA,IFZA UAE Packages,10,UBO (Ultimate Beneficial Owner),user_partner_circular_april_2026,true
+DMCC,Jump Start Package,1,DMCC company licence,dmcc_official_business_setup_packages,true
+DMCC,Jump Start Package,2,Standard flexi desk or co-working space eligible for three UAE residency visas,dmcc_official_business_setup_packages,true
+DMCC,Jump Start Package,3,One UAE residency visa included in package price,dmcc_official_business_setup_packages,true
+DMCC,Jump Start Package,4,Complimentary true copy of the resolution,dmcc_official_business_setup_packages,true
+DMCC,Basic Biz Package,1,DMCC company licence,dmcc_official_business_setup_packages,true
+DMCC,Basic Biz Package,2,Save on office space costs with special flexi desk options eligible for one UAE residency visa,dmcc_official_business_setup_packages,true
+DMCC,Basic Biz Package,3,Complimentary true copy of the resolution,dmcc_official_business_setup_packages,true
+DMCC,Basic Biz Package,4,"Tailored package for individual shareholders, not branches and subsidiaries",dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,1,DMCC company licence,dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,2,Complimentary true copy of the resolution,dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,3,Complimentary office operational fitness certificate,dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,4,Fast-track company setup and discount on company setup fees,dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,5,Extended provisional approval validity – 180 days instead of 90 days,dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,6,Guaranteed price freeze on licence renewal and 20% discount on additional business activities,dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,7,"Add shareholders, directors, and licence activities without charges up to three months from licence issuance",dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,8,"Save up to AED 10,000 on additional services",dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,9,100% digital setup process and dedicated client support,dmcc_official_business_setup_packages,true
+DMCC,Prime Plus Package,10,Complimentary bank account opening,dmcc_official_business_setup_packages,true
+DMCC,Ecosystem Packages,1,DMCC company licence,dmcc_official_business_setup_packages,true
+DMCC,Ecosystem Packages,2,Complimentary access to ecosystem co-working facility,dmcc_official_business_setup_packages,true
+DMCC,Ecosystem Packages,3,"Access to funding, mentoring and alumni network / industry events",dmcc_official_business_setup_packages,true
+DMCC,Ecosystem Packages,4,Complimentary true copy of the resolution,dmcc_official_business_setup_packages,true
+DMCC,Ecosystem Packages,5,50% discount on second year renewal fees where applicable,dmcc_official_business_setup_packages,true
+DMCC,Nook Package,1,DMCC company licence and complimentary true copy of the resolution,dmcc_official_business_setup_packages,true
+DMCC,Nook Package,2,Nook co-working desk and access to exclusive Nook facilities,dmcc_official_business_setup_packages,true
+DMCC,Nook Package,3,Access to industry and networking events,dmcc_official_business_setup_packages,true
+DMCC,Nook Package,4,50% discount on second year renewal fees and 30% discount on third-year fees,dmcc_official_business_setup_packages,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 0 Visas,12,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,1,Business License,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 1 Visa,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 2 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 3 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 4 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 5 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 6 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,New Registration Upfront Discount - 7 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 0 Visas,12,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,1,Business License,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 1 Visa,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 2 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 3 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 4 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 5 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 6 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,All Inclusive Installment Available - 7 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 0 Visas,12,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 1 Visa,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 2 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 3 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 4 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 5 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 6 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal Upfront Discount - 7 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 0 Visas,12,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 1 Visa,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 2 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 3 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 4 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 5 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 6 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Renewal All Inclusive Installment Available - 7 Visas,22,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,12,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,13,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 0 Visas,14,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 1 Visa,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 2 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 3 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 4 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 5 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 6 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 7 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 8 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 9 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,12,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,13,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go - 10 Visas,14,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,12,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,13,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 0 Visas,14,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 1 Visa,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 2 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 3 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 4 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 5 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 6 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 7 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 8 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,12,Investor(s) Security Approval – New Registration,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,13,E-Channel Registration (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,14,E-Channel Guarantee (New),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,15,Establishment Card (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,16,ICP- License Activation (Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,17,Entry Permit,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,18,Visa Status Change (If Applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,19,Visa Medical – Normal in Ajman (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,20,Residency Visa (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,21,Emirates ID (New/Renewal),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,22,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,23,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 9 Visas,24,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,1,Business License,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,2,Unlimited Shareholders,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,3,Up to 10 Mix & Match Activities,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,4,Lease Agreement,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,5,MOA/AOA (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,6,Commercial Registry,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,7,Share Certificate,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,8,Certificate of Incorporation,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,9,Certificate of Incumbency,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,10,Bank Letter (to open A/C),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,11,Branch Registration Certificate (if applicable),ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,12,Health insurance mandatory during visa process and excluded from package,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,13,Pay As You Go available as secondary option only,ancfz_packages_pdf,true
+ANCFZ,Pay As You Go Renewal - 10 Visas,14,Tabby payment is not offered by SmartSetupUAE,ancfz_packages_pdf,true

@@ -1,0 +1,12 @@
+freezone,addon_name,price,currency,unit,notes,source,is_active
+IFZA,Status Change Inside Country,1600,AED,per person,Required when applying inside UAE,user_partner_circular_april_2026,true
+IFZA,Investor / Partner Title,1000,AED,per person,Investor/partner title fee,user_partner_circular_april_2026,true
+IFZA,Extra Activity,1000,AED,per activity per year,For each extra activity,user_partner_circular_april_2026,true
+IFZA,VIP E-Visa,2000,AED,per application,24 business hours guaranteed,user_partner_circular_april_2026,true
+IFZA,VIP Residence Visa,1500,AED,per application,24 business hours guaranteed,user_partner_circular_april_2026,true
+IFZA,Concierge VIP Medical and EID,3500,AED,per person,"Pickup/drop-off, PRO assistance, 30-minute medical result, same-day EID application and biometrics",user_partner_circular_april_2026,true
+IFZA,"Concierge VIP Medical, EID and Residence Visa",4400,AED,per person,Full concierge plus 24-hour residence visa approval,user_partner_circular_april_2026,true
+SHAMS,Corporate Tax Registration,850,AED,per month,FTA registration/document review/portal submission/compliance guidance,shams_packages_page_and_user_screenshot,true
+SHAMS,VIP Medical & Biometrics,2000,AED,per year,"Private transport, concierge support, priority coordination",shams_packages_page_and_user_screenshot,true
+SHAMS,Dependent Visa,5000,AED,per application,Entry permit/status change/medical/EID/document support/visa stamping,shams_packages_page_and_user_screenshot,true
+SHAMS,Dedicated Account Manager Additional Stakeholder,1000,AED,per stakeholder,Additional stakeholder beyond included support,shams_packages_page_and_user_screenshot,true

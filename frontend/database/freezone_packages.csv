@@ -1,0 +1,85 @@
+﻿freezone,category,package_name,duration,workspace,original_price,package_price,offer_price,currency,includes_visa,source,is_active
+IFZA,Core UAE,0 Visa License,1 Year,Free Flexi-desk 1 year,,11900,11900,AED,0,user_partner_circular_april_2026,true
+IFZA,Core UAE,1 Visa License,1 Year,Free Flexi-desk 1 year,,16900,16900,AED,1 free visa for life,user_partner_circular_april_2026,true
+IFZA,Core UAE,2 Visa License,1 Year,Free Flexi-desk 1 year,,22650,22650,AED,1 free visa for life + 2nd visa,user_partner_circular_april_2026,true
+IFZA,Core UAE,3 Visa License,1 Year,Free Flexi-desk 1 year,,28400,28400,AED,1 free visa for life + 2nd visa + 3rd visa,user_partner_circular_april_2026,true
+SHAMS,Business Setup,Media Package,1 Year,Flexi desk & Lease Agreement provided,,8050,8050,AED,License only base; visa/e-channel separate where applicable,shams_packages_page_plus_existing_zone_rate,true
+SHAMS,Business Setup,Standard Package,1 Year,Flexi desk & Lease Agreement provided,,8050,8050,AED,License only base; visa/e-channel separate where applicable,shams_packages_page_plus_existing_zone_rate,true
+SHAMS,Business Setup,Media Package with Visa,1 Year,Flexi desk & Lease Agreement provided,,13900,13900,AED,Investor visa package estimate from current website data,existing_smartsetup_zone_rate,true
+SHAMS,Business Setup,Standard Package with Visa,1 Year,Flexi desk & Lease Agreement provided,,13900,13900,AED,Investor visa package estimate from current website data,existing_smartsetup_zone_rate,true
+DMCC,"Startups, SMEs and Entrepreneurs",Jump Start Package,1 Year,Standard Flexi Desk,57481,43780,39402,AED,1 UAE residency visa included; eligible for 3 visas,dmcc_official_business_setup_packages,true
+DMCC,"Startups, SMEs and Entrepreneurs",Jump Start Package,1 Year,Co-working Space,65146,49941,44946.9,AED,1 UAE residency visa included; eligible for 3 visas,dmcc_official_business_setup_packages,true
+DMCC,"Startups, SMEs and Entrepreneurs",Jump Start Package,2 Year,Advance payment in full,94975,81881,65504.8,AED,1 UAE residency visa included; eligible for 3 visas,dmcc_official_business_setup_packages,true
+DMCC,"Startups, SMEs and Entrepreneurs",Jump Start Package,3 Year,Advance payment in full,133483,120000,96000,AED,1 UAE residency visa included; eligible for 3 visas,dmcc_official_business_setup_packages,true
+DMCC,"Startups, SMEs and Entrepreneurs",Basic Biz Package,1 Year,Special flexi desk options,57481,35484,31935.6,AED,Eligible for one UAE residency visa,dmcc_official_business_setup_packages,true
+DMCC,Medium to large businesses,Prime Plus Package,1 Year,Advance payment in full,40145,38025,36130.5,AED,Office / operations package,dmcc_official_business_setup_packages,true
+DMCC,Medium to large businesses,Prime Plus Package,3 Year,Advance payment in full,,78100,62480,AED,Office / operations package,dmcc_official_business_setup_packages,true
+DMCC,Residents and owners,JLT Resident Package,1 Year,Special flexi-desk options,34300,29205,29205,AED,,dmcc_official_business_setup_packages,true
+DMCC,Residents and owners,Uptown Homeowners Package,1 Year,Uptown co-working facility,,0,0,AED,UAE residency visa valid for two years,dmcc_official_business_setup_packages,true
+DMCC,Ecosystems,DMCC Crypto Centre Package,1 Year,Co-working / ecosystem facility,31000,31000,27900,AED,,dmcc_official_business_setup_packages,true
+DMCC,Ecosystems,DMCC Gaming Centre Package,1 Year,Co-working / ecosystem facility,31000,31000,27900,AED,,dmcc_official_business_setup_packages,true
+DMCC,Ecosystems,DMCC AI Centre Package,1 Year,Co-working / ecosystem facility,31000,31000,27900,AED,,dmcc_official_business_setup_packages,true
+DMCC,Ecosystems,Nook Package,1 Year,Nook co-working desk,,10345,10345,AED,,dmcc_official_business_setup_packages,true
+DMCC,Ecosystems,AstroLabs Package,1 Year,AstroLabs co-working desk,,1925,1925,AED,,dmcc_official_business_setup_packages,true
+DMCC,CLG Packages,CLG Package – New,1 Year,No office/flexi/co-working included,,34185,34185,AED,,dmcc_official_business_setup_packages,true
+DMCC,CLG Packages,CLG Package – Transfer,1 Year,No office/flexi/co-working included,,30185,30185,AED,,dmcc_official_business_setup_packages,true
+SPC,Fallback Current Website Rate,License Only,1 Year,As per freezone page/default,,5750,5750,AED,License only base,existing_smartsetup_zone_rate,true
+RAKEZ,Fallback Current Website Rate,License Only,1 Year,As per freezone page/default,,8500,8500,AED,License only base,existing_smartsetup_zone_rate,true
+MEYDAN,Fallback Current Website Rate,License Only,1 Year,As per freezone page/default,,12500,12500,AED,License only base,existing_smartsetup_zone_rate,true
+JAFZA,Fallback Current Website Rate,License Only,1 Year,As per freezone page/default,,16500,16500,AED,License only base,existing_smartsetup_zone_rate,true
+KIZAD,Fallback Current Website Rate,License Only,1 Year,As per freezone page/default,,11000,11000,AED,License only base,existing_smartsetup_zone_rate,true
+DAFZA,Fallback Current Website Rate,License Only,1 Year,As per freezone page/default,,15000,15000,AED,License only base,existing_smartsetup_zone_rate,true
+ANCFZ,New Company Packages,New Registration Upfront Discount - 0 Visas,1 Year,All Inclusive; upfront payment discount; no installment discount on 0 visa,,4888,4888,AED,0,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,New Registration Upfront Discount - 1 Visa,1 Year,All Inclusive; upfront payment discount; no installment discount on 0 visa,,10800,10800,AED,1,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,New Registration Upfront Discount - 2 Visas,1 Year,All Inclusive; upfront payment discount; no installment discount on 0 visa,,16200,16200,AED,2,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,New Registration Upfront Discount - 3 Visas,1 Year,All Inclusive; upfront payment discount; no installment discount on 0 visa,,20700,20700,AED,3,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,New Registration Upfront Discount - 4 Visas,1 Year,All Inclusive; upfront payment discount; no installment discount on 0 visa,,25200,25200,AED,4,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,New Registration Upfront Discount - 5 Visas,1 Year,All Inclusive; upfront payment discount; no installment discount on 0 visa,,29700,29700,AED,5,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,New Registration Upfront Discount - 6 Visas,1 Year,All Inclusive; upfront payment discount; no installment discount on 0 visa,,34200,34200,AED,6,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,New Registration Upfront Discount - 7 Visas,1 Year,All Inclusive; upfront payment discount; no installment discount on 0 visa,,38700,38700,AED,7,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,All Inclusive Installment Available - 0 Visas,1 Year,All Inclusive; installment available; no Tabby payment through SmartSetupUAE,,4888,4888,AED,0,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,All Inclusive Installment Available - 1 Visa,1 Year,All Inclusive; installment available; no Tabby payment through SmartSetupUAE,,12000,12000,AED,1,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,All Inclusive Installment Available - 2 Visas,1 Year,All Inclusive; installment available; no Tabby payment through SmartSetupUAE,,18000,18000,AED,2,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,All Inclusive Installment Available - 3 Visas,1 Year,All Inclusive; installment available; no Tabby payment through SmartSetupUAE,,23000,23000,AED,3,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,All Inclusive Installment Available - 4 Visas,1 Year,All Inclusive; installment available; no Tabby payment through SmartSetupUAE,,28000,28000,AED,4,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,All Inclusive Installment Available - 5 Visas,1 Year,All Inclusive; installment available; no Tabby payment through SmartSetupUAE,,33000,33000,AED,5,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,All Inclusive Installment Available - 6 Visas,1 Year,All Inclusive; installment available; no Tabby payment through SmartSetupUAE,,38000,38000,AED,6,ancfz_packages_d_pdf,true
+ANCFZ,New Company Packages,All Inclusive Installment Available - 7 Visas,1 Year,All Inclusive; installment available; no Tabby payment through SmartSetupUAE,,43000,43000,AED,7,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal Upfront Discount - 0 Visas,1 Year,Renewal; upfront payment discount; no installment discount on 0 visa,,4888,4888,AED,0,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal Upfront Discount - 1 Visa,1 Year,Renewal; upfront payment discount; no installment discount on 0 visa,,9900,9900,AED,1,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal Upfront Discount - 2 Visas,1 Year,Renewal; upfront payment discount; no installment discount on 0 visa,,13950,13950,AED,2,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal Upfront Discount - 3 Visas,1 Year,Renewal; upfront payment discount; no installment discount on 0 visa,,17550,17550,AED,3,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal Upfront Discount - 4 Visas,1 Year,Renewal; upfront payment discount; no installment discount on 0 visa,,21150,21150,AED,4,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal Upfront Discount - 5 Visas,1 Year,Renewal; upfront payment discount; no installment discount on 0 visa,,24750,24750,AED,5,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal Upfront Discount - 6 Visas,1 Year,Renewal; upfront payment discount; no installment discount on 0 visa,,28350,28350,AED,6,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal Upfront Discount - 7 Visas,1 Year,Renewal; upfront payment discount; no installment discount on 0 visa,,31950,31950,AED,7,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal All Inclusive Installment Available - 0 Visas,1 Year,Renewal; installment available; no Tabby payment through SmartSetupUAE,,4888,4888,AED,0,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal All Inclusive Installment Available - 1 Visa,1 Year,Renewal; installment available; no Tabby payment through SmartSetupUAE,,11000,11000,AED,1,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal All Inclusive Installment Available - 2 Visas,1 Year,Renewal; installment available; no Tabby payment through SmartSetupUAE,,15500,15500,AED,2,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal All Inclusive Installment Available - 3 Visas,1 Year,Renewal; installment available; no Tabby payment through SmartSetupUAE,,19500,19500,AED,3,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal All Inclusive Installment Available - 4 Visas,1 Year,Renewal; installment available; no Tabby payment through SmartSetupUAE,,23500,23500,AED,4,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal All Inclusive Installment Available - 5 Visas,1 Year,Renewal; installment available; no Tabby payment through SmartSetupUAE,,27500,27500,AED,5,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal All Inclusive Installment Available - 6 Visas,1 Year,Renewal; installment available; no Tabby payment through SmartSetupUAE,,31500,31500,AED,6,ancfz_packages_d_pdf,true
+ANCFZ,Renewal Packages,Renewal All Inclusive Installment Available - 7 Visas,1 Year,Renewal; installment available; no Tabby payment through SmartSetupUAE,,35500,35500,AED,7,ancfz_packages_d_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 0 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,4888,4888,AED,0,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 1 Visa,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,12888,12888,AED,1,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 2 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,17888,17888,AED,2,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 3 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,22888,22888,AED,3,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 4 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,27888,27888,AED,4,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 5 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,32888,32888,AED,5,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 6 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,37888,37888,AED,6,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 7 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,42888,42888,AED,7,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 8 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,47888,47888,AED,8,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 9 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,52888,52888,AED,9,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go - 10 Visas,1 Year,Secondary option; health insurance excluded; no Tabby payment through SmartSetupUAE,,57888,57888,AED,10,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 0 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,4888,4888,AED,0,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 1 Visa,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,10588,10588,AED,1,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 2 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,14588,14588,AED,2,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 3 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,18588,18588,AED,3,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 4 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,22588,22588,AED,4,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 5 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,26588,26588,AED,5,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 6 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,30588,30588,AED,6,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 7 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,34588,34588,AED,7,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 8 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,34088,34088,AED,8,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 9 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,38088,38088,AED,9,ancfz_payg_10v_pdf,true
+ANCFZ,PAYG Packages,Pay As You Go Renewal - 10 Visas,1 Year,Secondary renewal option; health insurance excluded; no Tabby payment through SmartSetupUAE,,42088,42088,AED,10,ancfz_payg_10v_pdf,true

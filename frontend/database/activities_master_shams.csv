@@ -1,0 +1,71 @@
+freezone,activity_code,activity_name,industry_group,keywords,approval_required,approval_authority,is_active,source
+SHAMS,9067,Managing & Operating a Modelling Agency,Media,"managing, operating, modelling, agency",false,,true,uploaded_shams_activity_list
+SHAMS,9068,Talent Management,Media,"talent, management",false,,true,uploaded_shams_activity_list
+SHAMS,9311,Managing operations of sports facilities,Service and Consultancy,"managing, operations, of, sports, facilities",true,Sharjah Sports Council,true,uploaded_shams_activity_list
+SHAMS,9311.01,"Managing Operations of facilities for indoor or outdoor sports events (open, closed or covered, with or without spectator seating):",Service and Consultancy,"managing, operations, of, facilities, for, indoor, or, outdoor",true,Sharjah Sports Council,true,uploaded_shams_activity_list
+SHAMS,9311.02,Managing organization and operation of outdoor or indoor sports events for professionals or amateurs by organizations with own facilities this class includes managing and providing the staff to operate these facilities.,Service and Consultancy,"managing, organization, and, operation, of, outdoor, or, indoor",true,Sharjah Sports Council,true,uploaded_shams_activity_list
+SHAMS,9312,Activities of sports clubs,Service and Consultancy,"activities, of, sports, clubs",false,,true,uploaded_shams_activity_list
+SHAMS,9312.01,Managing operations of sports clubs:,Service and Consultancy,"managing, operations, of, sports, clubs",false,,true,uploaded_shams_activity_list
+SHAMS,9319,Other sports activities,Service and Consultancy,"other, sports, activities",false,,true,uploaded_shams_activity_list
+SHAMS,9319.01,"Activities of producers or promoters of sports events, with or without facilities",Service and Consultancy,"activities, of, producers, or, promoters, of, sports, events",false,,true,uploaded_shams_activity_list
+SHAMS,9319.02,"Activities of individual own-account sportsmen and athletes, referees, judges, timekeepers etc.",Service and Consultancy,"activities, of, individual, own, account, sportsmen, and, athletes",false,,true,uploaded_shams_activity_list
+SHAMS,9319.03,Activities of sports leagues and regulating bodies,Service and Consultancy,"activities, of, sports, leagues, and, regulating, bodies",false,,true,uploaded_shams_activity_list
+SHAMS,9319.04,Activities related to promotion of sporting events,Service and Consultancy,"activities, related, to, promotion, of, sporting, events",true,Sharjah Sports Council,true,uploaded_shams_activity_list
+SHAMS,9319.05,Activities of racing garages,Service and Consultancy,"activities, of, racing, garages",false,,true,uploaded_shams_activity_list
+SHAMS,9319.06,Operation of sport fishing and hunting preserves,Service and Consultancy,"operation, of, sport, fishing, and, hunting, preserves",false,,true,uploaded_shams_activity_list
+SHAMS,9319.07,Activities of mountain guides,Service and Consultancy,"activities, of, mountain, guides",false,,true,uploaded_shams_activity_list
+SHAMS,9319.08,Support activities for sport or recreational hunting and fishing,Service and Consultancy,"support, activities, for, sport, or, recreational, hunting, and",false,,true,uploaded_shams_activity_list
+SHAMS,9319.12,Sports consultancy,Service and Consultancy,"sports, consultancy",false,,true,uploaded_shams_activity_list
+SHAMS,9411,Activities of business and employers membership organizations,Service and Consultancy,"activities, of, business, and, employers, membership, organizations",false,,true,uploaded_shams_activity_list
+SHAMS,9411.01,"Activities of organizations whose members’ interests centre on the development and prosperity of enterprises in a particular line of business or trade, including farming, or on the economic growth and climate of a particular geographical area without regard for the line of business.",Service and Consultancy,"activities, of, organizations, whose, members, interests, centre, on",false,,true,uploaded_shams_activity_list
+SHAMS,9411.05,Legal consultancy and intellectual property services,Service and Consultancy,"legal, consultancy, and, intellectual, property, services",false,,true,uploaded_shams_activity_list
+SHAMS,9412,Activities of professional membership organizations,Service and Consultancy,"activities, of, professional, membership, organizations",false,,true,uploaded_shams_activity_list
+SHAMS,9412.01,"Activities of organizations whose members’ interests centre chiefly on a particular scientific discipline, professional practice or technical field, such as medical associations, legal associations, accounting associations, engineering associations, architects associations etc.",Service and Consultancy,"activities, of, organizations, whose, members, interests, centre, chiefly",false,,true,uploaded_shams_activity_list
+SHAMS,9412.02,"Activities of associations of specialists engaged in cultural activities, such as associations of writers, painters, performers of various kinds, journalists etc.",Service and Consultancy,"activities, of, associations, of, specialists, engaged, in, cultural",false,,true,uploaded_shams_activity_list
+SHAMS,9412.04,Activities of learned societies,Service and Consultancy,"activities, of, learned, societies",false,,true,uploaded_shams_activity_list
+SHAMS,9412.05,"Legal consultants, corporate services provider",Service and Consultancy,"legal, consultants, corporate, services, provider",false,,true,uploaded_shams_activity_list
+SHAMS,9499,Activities of other membership organizations n.e.c.,Service and Consultancy,"activities, of, other, membership, organizations",false,,true,uploaded_shams_activity_list
+SHAMS,9499.03,Automobile associations,Service and Consultancy,"automobile, associations",false,,true,uploaded_shams_activity_list
+SHAMS,9499.05,"Associations of youth, young persons’ associations, student associations and fraternities etc.",Service and Consultancy,"associations, of, youth, young, persons, associations, student, associations",false,,true,uploaded_shams_activity_list
+SHAMS,9499.06,"Associations for the pursuit of a cultural or recreational activity or hobby (other than sports or games), e.g. poetry, literature and book clubs, historical clubs, gardening clubs, film and photo clubs, music and art clubs, craft and collectors’ clubs, social clubs, carnival clubs etc.",Service and Consultancy,"associations, for, the, pursuit, of, cultural, or, recreational",false,,true,uploaded_shams_activity_list
+SHAMS,9499.07,Grant giving activities by membership organizations or others,Service and Consultancy,"grant, giving, activities, by, membership, organizations, or, others",false,,true,uploaded_shams_activity_list
+SHAMS,9499.99,Social networking platform,Service and Consultancy,"social, networking, platform",false,,true,uploaded_shams_activity_list
+SHAMS,9511,Repair of computers and peripheral equipment,Service and Consultancy,"repair, of, computers, and, peripheral, equipment",false,,true,uploaded_shams_activity_list
+SHAMS,9511.01,Repair and maintenance of:,Service and Consultancy,"repair, and, maintenance, of",false,,true,uploaded_shams_activity_list
+SHAMS,9511.02,Repair and maintenance of:,Service and Consultancy,"repair, and, maintenance, of",false,,true,uploaded_shams_activity_list
+SHAMS,9512,Repair of communication equipment,Service and Consultancy,"repair, of, communication, equipment",false,,true,uploaded_shams_activity_list
+SHAMS,9512.01,Repair and maintenance of communications equipment such as:,Service and Consultancy,"repair, and, maintenance, of, communications, equipment, such, as",false,,true,uploaded_shams_activity_list
+SHAMS,9521,Repair of consumer electronics,Service and Consultancy,"repair, of, consumer, electronics",false,,true,uploaded_shams_activity_list
+SHAMS,9521.01,Repair and maintenance of consumer electronics:,Service and Consultancy,"repair, and, maintenance, of, consumer, electronics",false,,true,uploaded_shams_activity_list
+SHAMS,9522,Repair of household appliances and home and garden equipment,Service and Consultancy,"repair, of, household, appliances, and, home, and, garden",false,,true,uploaded_shams_activity_list
+SHAMS,9522.01,Repair and servicing of household appliances,Service and Consultancy,"repair, and, servicing, of, household, appliances",false,,true,uploaded_shams_activity_list
+SHAMS,9522.02,Repair and servicing of home and garden equipment,Service and Consultancy,"repair, and, servicing, of, home, and, garden, equipment",false,,true,uploaded_shams_activity_list
+SHAMS,9523,Repair of footwear and leather goods,Service and Consultancy,"repair, of, footwear, and, leather, goods",false,,true,uploaded_shams_activity_list
+SHAMS,9523.01,Repair and maintenance of footwear:,Service and Consultancy,"repair, and, maintenance, of, footwear",false,,true,uploaded_shams_activity_list
+SHAMS,9523.02,Fitting of heels,Service and Consultancy,"fitting, of, heels",false,,true,uploaded_shams_activity_list
+SHAMS,9523.03,Repair and maintenance of leather goods:,Service and Consultancy,"repair, and, maintenance, of, leather, goods",false,,true,uploaded_shams_activity_list
+SHAMS,9524,Repair of furniture and home furnishings,Service and Consultancy,"repair, of, furniture, and, home, furnishings",false,,true,uploaded_shams_activity_list
+SHAMS,9524.01,"Reupholstering, refinishing, repairing and restoring of furniture and home furnishings including office furniture",Service and Consultancy,"reupholstering, refinishing, repairing, and, restoring, of, furniture, and",false,,true,uploaded_shams_activity_list
+SHAMS,9524.02,Assembly of self-standing furniture,Service and Consultancy,"assembly, of, self, standing, furniture",false,,true,uploaded_shams_activity_list
+SHAMS,9529,Repair of other personal and household goods,Service and Consultancy,"repair, of, other, personal, and, household, goods",false,,true,uploaded_shams_activity_list
+SHAMS,9529.01,Repair of bicycles,Service and Consultancy,"repair, of, bicycles",false,,true,uploaded_shams_activity_list
+SHAMS,9529.02,Repair and alteration of clothing,Service and Consultancy,"repair, and, alteration, of, clothing",false,,true,uploaded_shams_activity_list
+SHAMS,9529.03,Repair and alteration of jewellery,Service and Consultancy,"repair, and, alteration, of, jewellery",false,,true,uploaded_shams_activity_list
+SHAMS,9529.04,"Repair of watches, clocks and their parts such as watchcases and housings of all materials; movements, chronometers, etc.",Service and Consultancy,"repair, of, watches, clocks, and, their, parts, such",false,,true,uploaded_shams_activity_list
+SHAMS,9529.05,Repair of sporting goods (except sporting guns),Service and Consultancy,"repair, of, sporting, goods, except, sporting, guns",false,,true,uploaded_shams_activity_list
+SHAMS,9529.06,Repair of books,Service and Consultancy,"repair, of, books",false,,true,uploaded_shams_activity_list
+SHAMS,9529.07,Repair of musical instruments,Service and Consultancy,"repair, of, musical, instruments",false,,true,uploaded_shams_activity_list
+SHAMS,9529.08,Repair of toys and similar articles,Service and Consultancy,"repair, of, toys, and, similar, articles",false,,true,uploaded_shams_activity_list
+SHAMS,9529.09,Repair of other personal and household goods,Service and Consultancy,"repair, of, other, personal, and, household, goods",false,,true,uploaded_shams_activity_list
+SHAMS,9529.1,Piano-tuning,Service and Consultancy,"piano, tuning",false,,true,uploaded_shams_activity_list
+SHAMS,9609,Other personal service activities n.e.c.,Service and Consultancy,"other, personal, service, activities",true,Sharjah Municipality,true,uploaded_shams_activity_list
+SHAMS,9609.02,"Pet care services such as boarding, grooming, sitting and training pets",Service and Consultancy,"pet, care, services, such, as, boarding, grooming, sitting",false,,true,uploaded_shams_activity_list
+SHAMS,9609.03,not found,Service and Consultancy,"not, found",false,,true,uploaded_shams_activity_list
+SHAMS,9609.04,not found,Service and Consultancy,"not, found",false,,true,uploaded_shams_activity_list
+SHAMS,9609.05,not found,Service and Consultancy,"not, found",false,,true,uploaded_shams_activity_list
+SHAMS,9609.06,"Pet care services such as boarding, grooming, sitting and training pets",Service and Consultancy,"pet, care, services, such, as, boarding, grooming, sitting",true,Mucipality,true,uploaded_shams_activity_list
+SHAMS,9609.11,Lifestyle consultancy,Service and Consultancy,"lifestyle, consultancy",false,,true,uploaded_shams_activity_list
+SHAMS,9609.12,Fashion design consultancy,Service and Consultancy,"fashion, design, consultancy",false,,true,uploaded_shams_activity_list
+SHAMS,9609.13,Lifestyle development consultancy,Service and Consultancy,"lifestyle, development, consultancy",false,,true,uploaded_shams_activity_list
+SHAMS,9609.27,Pet relocation service,Service and Consultancy,"pet, relocation, service",true,UAE Ministry of Climate Change & Environment (MOCCAE),true,uploaded_shams_activity_list
+SHAMS,9609.92,Corporate social responsibilitity intiatives preparation,Service and Consultancy,"corporate, social, responsibilitity, intiatives, preparation",false,,true,uploaded_shams_activity_list
