@@ -80,3 +80,10 @@ memory/test_credentials.md
 
 # Mobile development
 android-sdk/smart-setup-uae-website.zip
+.env
+.env.*
+*.env
+credentials.json
+*.key
+.credentials
+smart-setup-uae-website.zip
