@@ -36,7 +36,7 @@ export function normalizeFreezonePackage(input = {}) {
   const freezoneName = first(row, ['freezone', 'freezone_name', 'jurisdiction', 'authority'], 'Free Zone');
   const packageName = first(row, ['package_name', 'name', 'title', 'category'], 'Business Setup Package');
   const slug = first(row, ['slug', 'freezone_slug'], slugify(freezoneName));
-  const basePrice = num(first(row, ['display_price', 'offer_price', 'package_price', 'base_price', 'original_price', 'price'], 0));
+  const basePrice = num(first(row, ['display_price', 'promotion_price', 'discount_price', 'offer_price', 'package_price', 'base_price', 'original_price', 'price'], 0));
   const serviceFee = num(first(row, ['service_fee', 'advisory_fee', 'svc'], 0), 0);
   const visaCount = num(first(row, ['visa_count', 'visas', 'max_visas'], first(row, ['includes_visa'], 0)), 0);
   const totalWithService = num(first(row, ['total_price', 'total_aed'], basePrice + serviceFee), basePrice + serviceFee);
@@ -100,8 +100,8 @@ export function normalizePackageDiscount(input = {}) {
     slug: slugify(first(row, ['freezone', 'freezone_name'], '')),
     freezone_name: first(row, ['freezone', 'freezone_name'], ''),
     package_name: first(row, ['package_name', 'name'], ''),
-    duration: first(row, ['duration'], ''),
-    discount_percent: num(first(row, ['discount_percent', 'discount'], 0), 0),
+    duration: first(row, ['duration', 'validity', 'duration_years'], ''),
+    discount_percent: num(first(row, ['discount_percent', 'discount_percentage', 'discount'], 0), 0),
     applies_to: first(row, ['applies_to'], ''),
     notes: first(row, ['notes', 'description'], ''),
     is_active: bool(first(row, ['is_active', 'active'], true), true),
@@ -182,7 +182,7 @@ export function getZoneAddons(addons = [], zone) {
 
 export function getZoneDiscounts(discounts = [], zone) {
   const zoneKey = String(zone?.slug || '').toLowerCase();
-  return discounts.filter((item) => item.slug === zoneKey).sort((a, b) => a.duration.localeCompare(b.duration));
+  return discounts.filter((item) => item.slug === zoneKey).sort((a, b) => String(a?.duration ?? '').localeCompare(String(b?.duration ?? '')));
 }
 
 export function mergeZoneWithLivePackage(zone, livePackages = []) {

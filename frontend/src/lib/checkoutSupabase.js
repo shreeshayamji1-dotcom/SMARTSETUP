@@ -139,165 +139,95 @@ function buildOrderReference() {
   return `SSU-${date}-${suffix}`;
 }
 
+function newUuid() {
+  return (typeof window !== 'undefined' && window.crypto?.randomUUID)
+    ? window.crypto.randomUUID()
+    : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = (Math.random() * 16) | 0;
+        return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+      });
+}
+
 function buildOrderPayload(draft, totalAed, user) {
   const reference = buildOrderReference();
   const contact = draft.contact || {};
   const business = draft.business || {};
+  const addonsTotal = (draft.addons || []).reduce((sum, a) => sum + money(a.price, 0), 0);
+  const finalTotal = money(totalAed, 0);
+  const basePrice = Math.max(finalTotal - addonsTotal, 0);
+
+  const noteParts = [
+    `Ref: ${reference}`,
+    business.activity ? `Activity: ${business.activity}` : null,
+    (business.company_names || []).filter(Boolean).length ? `Company names: ${(business.company_names || []).filter(Boolean).join(', ')}` : null,
+    draft.office_type ? `Office: ${draft.office_type}` : null,
+    user?.id ? `User: ${user.id}` : null,
+  ].filter(Boolean);
 
   return {
+    id: newUuid(),
     reference,
-    user_id: user?.id || null,
     customer_name: contact.name || null,
     customer_email: contact.email || null,
     customer_phone: contact.phone ? `${contact.phone_code || ''} ${contact.phone}`.trim() : null,
-    freezone: draft.zone_name || null,
-    freezone_slug: draft.zone_slug || null,
+    freezone: draft.zone_name || draft.zone_slug || 'Free Zone',
     package_id: draft.package_id || null,
-    package_name: draft.package_name || null,
+    package_name: draft.package_name || draft.zone_name || null,
+    duration_years: money(draft.duration_years, 1),
     visa_count: money(draft.visa_count, 0),
-    office_type: draft.office_type || null,
-    business_activity: business.activity || null,
-    company_names: (business.company_names || []).filter(Boolean),
-    shareholders: money(business.shareholders, 1),
-    total_aed: money(totalAed, 0),
-    prebooking_amount_aed: PREBOOKING_AMOUNT_AED,
-    payment_status: 'pending',
+    shareholder_count: money(business.shareholders, 1),
+    base_price: basePrice,
+    addons_total: addonsTotal,
+    discount_total: money(draft.discount_total, 0),
+    final_total: finalTotal,
+    currency: 'AED',
     status: 'draft',
-    source: 'website_checkout',
-    raw_payload: draft,
+    notes: noteParts.join(' | ') || null,
   };
 }
 
-async function insertFirstAccepted(table, candidates) {
-  let lastError = null;
-  for (const payload of candidates) {
-    try {
-      const rows = await supabaseRest.insert(table, [payload]);
-      if (rows?.[0]) return rows[0];
-    } catch (error) {
-      lastError = error;
-    }
-  }
-  throw lastError || new Error(`Could not insert into ${table}`);
-}
-
-function buildOrderInsertCandidates(fullPayload) {
-  const raw = fullPayload.raw_payload || {};
-  return [
-    fullPayload,
-    {
-      reference: fullPayload.reference,
-      user_id: fullPayload.user_id,
-      customer_name: fullPayload.customer_name,
-      customer_email: fullPayload.customer_email,
-      customer_phone: fullPayload.customer_phone,
-      freezone: fullPayload.freezone,
-      package_id: fullPayload.package_id,
-      package_name: fullPayload.package_name,
-      total_aed: fullPayload.total_aed,
-      prebooking_amount_aed: fullPayload.prebooking_amount_aed,
-      payment_status: fullPayload.payment_status,
-      status: fullPayload.status,
-      source: fullPayload.source,
-      raw_payload: raw,
-    },
-    {
-      reference: fullPayload.reference,
-      customer_name: fullPayload.customer_name,
-      customer_email: fullPayload.customer_email,
-      customer_phone: fullPayload.customer_phone,
-      freezone: fullPayload.freezone,
-      package_name: fullPayload.package_name,
-      total_aed: fullPayload.total_aed,
-      payment_status: fullPayload.payment_status,
-      status: fullPayload.status,
-      raw_payload: raw,
-    },
-  ];
-}
-
-function buildAddonInsertCandidates(orderId, addon) {
-  return [
-    {
-      order_id: orderId,
-      addon_id: addon.addon_id || addon.id || null,
-      addon_name: addon.label || addon.addon_name || 'Add-on',
-      price: money(addon.price, 0),
-      quantity: 1,
-      raw_payload: addon,
-    },
-    {
-      order_id: orderId,
-      addon_name: addon.label || addon.addon_name || 'Add-on',
-      price: money(addon.price, 0),
-      quantity: 1,
-    },
-  ];
-}
-
 async function recalculateOrder(orderId) {
-  const attempts = [
-    () => supabaseRest.rpc('recalculate_checkout_order', { order_id: orderId }),
-    () => supabaseRest.rpc('recalculate_checkout_order', { p_order_id: orderId }),
-  ];
-  let lastError = null;
-  for (const attempt of attempts) {
-    try { return await attempt(); } catch (error) { lastError = error; }
-  }
-  throw lastError || new Error('Could not recalculate checkout order');
+  return supabaseRest.rpc('recalculate_checkout_order', { p_order_id: orderId });
 }
 
 export async function createCheckoutOrder(draft, totalAed, user) {
   const orderPayload = buildOrderPayload(draft, totalAed, user);
-  const order = await insertFirstAccepted('checkout_orders', buildOrderInsertCandidates(orderPayload));
-  if (!order?.id) throw new Error('Supabase order insert did not return an order id. Check checkout_orders insert policy and return=representation.');
+  const { reference, ...orderRow } = orderPayload;
+  await supabaseRest.insert('checkout_orders', [orderRow], null, 'return=minimal');
+  const orderId = orderRow.id;
 
   for (const addon of draft.addons || []) {
-    await insertFirstAccepted('checkout_order_addons', buildAddonInsertCandidates(order.id, addon));
+    await supabaseRest.insert('checkout_order_addons', [{
+      order_id: orderId,
+      addon_name: addon.label || addon.addon_name || 'Add-on',
+      addon_category: addon.addon_category || null,
+      price: money(addon.price, 0),
+      currency: 'AED',
+    }], null, 'return=minimal');
   }
 
   try {
-    await recalculateOrder(order.id);
+    await recalculateOrder(orderId);
   } catch (error) {
-    console.warn('[checkout] Order saved but recalculation failed:', error.message);
+    console.warn('[checkout] Order saved but recalculation skipped:', error.message);
   }
 
-  return {
-    ...order,
-    reference: order.reference || orderPayload.reference,
-    claim_token: order.claim_token || null,
-  };
+  return { id: orderId, reference, ...orderRow };
 }
 
 export async function markBankTransferSubmitted(order, bankProof) {
   const query = `?id=eq.${postgrestValue(order.id)}`;
-  const candidates = [
-    {
-      payment_method: 'bank_transfer',
-      payment_status: 'proof_submitted',
-      status: 'payment_review',
-      bank_reference: bankProof.reference || order.reference,
-      bank_payer_name: bankProof.payer_name || null,
-      bank_receipt_file_name: bankProof.file_name || null,
-      bank_receipt_content_type: bankProof.content_type || null,
-      bank_receipt_base64: bankProof.file_base64 || null,
-    },
-    {
-      payment_status: 'proof_submitted',
-      status: 'payment_review',
-      bank_reference: bankProof.reference || order.reference,
-      bank_payer_name: bankProof.payer_name || null,
-    },
-    {
-      payment_status: 'proof_submitted',
-      status: 'payment_review',
-    },
-  ];
-  let lastError = null;
-  for (const payload of candidates) {
-    try { return await supabaseRest.update('checkout_orders', payload, query); } catch (error) { lastError = error; }
-  }
-  throw lastError || new Error('Could not update bank transfer proof');
+  const noteSuffix = [
+    'Bank transfer proof submitted',
+    bankProof.reference ? `Ref: ${bankProof.reference}` : null,
+    bankProof.payer_name ? `Payer: ${bankProof.payer_name}` : null,
+    bankProof.file_name ? `File: ${bankProof.file_name}` : null,
+  ].filter(Boolean).join(' | ');
+
+  return supabaseRest.update('checkout_orders', {
+    status: 'payment_review',
+    notes: noteSuffix,
+  }, query, null);
 }
 
 export function getPrebookingAmount() {

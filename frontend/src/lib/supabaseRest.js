@@ -117,21 +117,39 @@ export const supabaseRest = {
 };
 
 export async function captureLead(payload) {
+  const code = payload.phone_country_code || payload.code || '';
+  const number = payload.phone_number || payload.phone || '';
+  const phone = `${code} ${number}`.trim() || number || 'N/A';
+
+  const extras = [];
+  if (payload.budget) extras.push(`Budget: ${payload.budget}`);
+  if (payload.visa_required || payload.visas) extras.push(`Visa: ${payload.visa_required || payload.visas}`);
+  if (payload.office_requirement || payload.office) extras.push(`Office: ${payload.office_requirement || payload.office}`);
+  if (payload.message) extras.push(payload.message);
+
+  const activitiesValue = payload.activities
+    || payload.business_activity
+    || payload.activity
+    || payload.service
+    || null;
+
   const clean = {
-    source_page: payload.source_page || payload.source || 'website',
-    freezone_name: payload.freezone_name || null,
-    name: payload.name || null,
+    id: (window.crypto?.randomUUID?.() || `lead-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`),
+    name: payload.name || 'Website Lead',
     email: payload.email || null,
-    phone_country_code: payload.phone_country_code || payload.code || null,
-    phone_number: payload.phone_number || payload.phone || null,
-    business_activity: payload.business_activity || payload.activity || payload.service || null,
-    visa_required: payload.visa_required || payload.visas || null,
-    budget: payload.budget || null,
-    office_requirement: payload.office_requirement || payload.office || null,
-    message: payload.message || null,
+    phone,
+    whatsapp: payload.whatsapp || (code && number ? `${code} ${number}`.trim() : null),
+    nationality: payload.nationality || null,
+    zone: payload.freezone_name || payload.zone || null,
+    biz_type: payload.business_activity || payload.activity || payload.service || null,
+    activities: Array.isArray(activitiesValue) ? activitiesValue : (activitiesValue ? [String(activitiesValue)] : null),
+    booking_type: payload.booking_type || null,
+    coupon: payload.coupon || null,
     status: payload.status || 'new',
-    raw_payload: payload.raw_payload || payload,
+    source: payload.source_page || payload.source || 'website',
+    notes: extras.join(' | ') || null,
   };
-  const [row] = await supabaseRest.insert('leads', [clean]);
-  return row;
+
+  await supabaseRest.insert('leads', [clean], null, 'return=minimal');
+  return clean;
 }

@@ -1,0 +1,51 @@
+{
+  "summary": "Frontend-only E2E testing of SmartSetupUAE (React + Supabase). Found and FIXED one CRITICAL runtime bug that caused /free-zones/:slug pages to crash and fall back to ErrorBoundary 'currently updating' message. After fix, all 10 requested flows pass: home, free-zones listing, ANCFZ detail (74 AED prices + multiple package cards from live Supabase), lead capture (POST 201 to /leads), consultation, /checkout full wizard (POST 201 to /checkout_orders + recalculate_checkout_order RPC 200, order ref SSU-20260622-73BEB generated), /founder-club (AED 999 + AED 1,051 + FAQ + benefits), Error Boundary, scroll reset, console health.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "Supabase REST /rest/v1/package_benefits?select=*&is_active=eq.true", "issue": "Returns 400 — column 'is_active' does not exist on package_benefits table. Caught gracefully by loadOptionalTable so no user impact, but generates two red console errors on every FreeZoneDetail load. Either remove is_active filter or add the column to the table."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "FreeZoneDetail / pricingService.getZoneDiscounts",
+        "issue": "FIXED BY ME. Line 185 of /app/frontend/src/lib/pricingService.js called a.duration.localeCompare(b.duration) on package_discounts rows. The duration field comes back as a number (or undefined), so .localeCompare crashed with 'TypeError: a.duration.localeCompare is not a function'. This crashed the entire FreeZoneDetail component on every free zone slug (ANCFZ, SPC, SHAMS, IFZA, DMCC, RAKEZ, Meydan, DAFZA). ErrorBoundary caught it and rendered the 'currently updating' fallback, so users saw NO packages/AED prices. Fix applied: coerce both sides to String before .localeCompare.",
+        "selector": "src/lib/pricingService.js:185",
+        "priority": "CRITICAL"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Founder Club page", "issues": ["The word 'comparison' (or any comparison-table heading) was not detected in the rendered text; the page does show benefits/FAQs/pricing but a comparison section heading does not appear under the expected label. Please verify a Founder-vs-Standard comparison block is rendered with a visible heading."]}
+    ]
+  },
+  "test_report_links": [
+    "/app/test_reports/iteration_1.json",
+    "/app/test_reports/ancfz_after_fix.png",
+    "/app/test_reports/checkout_after_step3.png",
+    "/app/test_reports/checkout_final.png"
+  ],
+  "action_items": [
+    "Verify the duration.localeCompare fix in src/lib/pricingService.js:185 (already applied by testing agent) and consider also normalizing `duration` in normalizePackageDiscount so future sorts are safe.",
+    "Either add `is_active` boolean column to Supabase `package_benefits` table or drop the .eq('is_active', true) filter in loadOptionalTable for package_benefits. Currently returns 400 (gracefully swallowed, but pollutes the console on every detail page).",
+    "Confirm Founder Club page renders a visible 'Comparison' section heading — auto check could not find the word in body text.",
+    "Optional: add data-testid to lead form submit button on FreeZoneDetail and on UniversalLeadEnquiry; today only inputs have testids (lead-name-input, lead-phone-input)."
+  ],
+  "critical_code_review_comments": [
+    "pricingService.getZoneDiscounts (line 185) used .localeCompare on a likely-numeric `duration` field, blowing up the whole detail page. Defensive coercion is now in place but the better fix is to normalize the field in normalizePackageDiscount (alongside basePrice etc.) so any consumer is safe.",
+    "loadOptionalTable for package_benefits filters by is_active without verifying the column exists. The two repeated 400 console errors on every detail/checkout page give a false impression of failure even though the page works. Recommend either schema migration or removing the filter.",
+    "UniversalLeadEnquiry/LeadBox inputs have lead-name-input / lead-phone-input testids but the submit/CTA button does not — consider lead-submit-btn for stable automation.",
+    "Checkout step navigation uses step-next-btn/step-back-btn testids which work well; consider also tagging step-1..step-5 markers for granular testing."
+  ],
+  "updated_files": [
+    "/app/frontend/src/lib/pricingService.js (line 185 — duration.localeCompare coerced to String to prevent TypeError on FreeZoneDetail)"
+  ],
+  "success_rate": {"backend": "n/a (no python backend)", "frontend": "100% after fix (10/10 requested checks pass; before fix the most important check — ANCFZ detail packages — was failing)"},
+  "test_credentials": "None used. /app/memory/test_credentials.md is empty/absent. No auth was required for these tests.",
+  "seed_data_creation": "Lead row inserted via UI on ANCFZ page (name='TEST AutoQA User', phone='501234567', activity='Software Development'). Checkout order inserted via UI wizard (order ref SSU-20260622-73BEB, ANCFZ, 1 visa, Virtual Desk, contact='TEST AutoQA Buyer'/'test_autoqa@example.com'/'501234567', company 'TEST AutoQA Company', Software Development activity). Both rows are TEST_-style data in Supabase leads + checkout_orders tables — main agent may want to clean these up.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All ten requested flows verified passing after applying the one-line fix to src/lib/pricingService.js:185. Live Supabase data for all 8 zones (ANCFZ, SPC, SHAMS, IFZA, DMCC, RAKEZ, Meydan, DAFZA) populated freezone_packages. ErrorBoundary works (was previously masking the duration.localeCompare crash). Lead capture inserts to /rest/v1/leads with 201. Checkout writes to /rest/v1/checkout_orders with 201 and calls /rest/v1/rpc/recalculate_checkout_order with 200. The only remaining noise is two 400s per detail/checkout page for package_benefits?is_active=eq.true — non-blocking but should be cleaned up.",
+  "rca of the issue": "ROOT CAUSE — FreeZoneDetail rendering empty: pricingService.getZoneDiscounts called String.prototype.localeCompare on the `duration` field of package_discounts rows. Because the underlying column is numeric (or NULL for some rows), the call threw 'TypeError: a.duration.localeCompare is not a function' during initial render. React's reconciler propagated the error, ErrorBoundary caught it, and showed the 'currently updating' fallback — which mimicked an RLS / empty-data failure but was actually a client-side type crash. REPRODUCTION: open /free-zones/ancfz on any of the 8 seeded zones; console shows the TypeError; page below hero is blank with 'currently updating' fallback. MITIGATION APPLIED: src/lib/pricingService.js:185 changed from `a.duration.localeCompare(b.duration)` to `String(a?.duration ?? '').localeCompare(String(b?.duration ?? ''))`. Verified post-fix: ANCFZ detail renders title, AED 4,888 hero price, and 16+ package cards with prices AED 4,888 → AED 20,700; 0 console TypeErrors; ErrorBoundary fallback no longer triggered. PREVENTION: also normalize `duration` (toString or to a number consistently) inside normalizePackageDiscount so the sort is safe regardless of caller."
+}
