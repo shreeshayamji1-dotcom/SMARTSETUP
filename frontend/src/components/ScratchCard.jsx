@@ -36,18 +36,25 @@ export default function ScratchCard() {
     if (!show) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grad.addColorStop(0, '#B45309');
-    grad.addColorStop(1, '#F59E0B');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(255,255,255,0.9)';
-    ctx.font = 'bold 18px Inter';
-    ctx.textAlign = 'center';
-    ctx.fillText('🪙 Scratch to reveal your gift', canvas.width / 2, canvas.height / 2);
+    const draw = () => {
+      const w = canvas.offsetWidth || canvas.parentElement?.offsetWidth || 360;
+      const h = canvas.offsetHeight || 192;
+      if (!w || !h) { window.requestAnimationFrame(draw); return; }
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      grad.addColorStop(0, '#B45309');
+      grad.addColorStop(1, '#F59E0B');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      ctx.font = 'bold 17px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Scratch here to reveal your gift', canvas.width / 2, canvas.height / 2);
+    };
+    const t = window.setTimeout(draw, 220);
+    return () => window.clearTimeout(t);
   }, [show]);
 
   const scratch = (e) => {
@@ -122,7 +129,7 @@ export default function ScratchCard() {
           )}
 
           <div className="mt-5 flex flex-col sm:flex-row gap-2">
-            <Button onClick={() => { close(); navigate('/consultation'); }} className="btn-primary rounded-full flex-1">Start My Application →</Button>
+            <Button onClick={() => { close(); navigate(`/checkout?coupon=${encodeURIComponent(reward.code)}`); }} className="btn-primary rounded-full flex-1">Start My Application →</Button>
             <Button onClick={close} variant="outline" className="rounded-full flex-1 border-slate-300">Browse Free Zones First</Button>
           </div>
         </div>

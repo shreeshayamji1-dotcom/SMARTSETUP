@@ -163,7 +163,7 @@ export default function AISearch() {
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button onClick={() => setLeadOpen(true)} className="btn-primary rounded-full px-6 h-11">Start Application <ArrowRight className="h-4 w-4 ml-2" /></Button>
-                <Button variant="outline" onClick={() => navigate(`/free-zones?compare=${encodeURIComponent(result.activity)}`)} className="rounded-full px-6 h-11 border-slate-300">Get Full Comparison</Button>
+                <Button variant="outline" onClick={() => navigate(`/compare?activity=${encodeURIComponent(result.activity)}&zones=${encodeURIComponent(result.bestZone || '')}`)} className="rounded-full px-6 h-11 border-slate-300">Get Full Comparison</Button>
                 <Button variant="outline" onClick={() => setLeadOpen(true)} className="rounded-full px-6 h-11 border-slate-300">Book a Free Call</Button>
               </div>
 

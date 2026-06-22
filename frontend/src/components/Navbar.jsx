@@ -7,6 +7,7 @@ import { useAuth } from '../context/AuthContext';
 const NAV = [
   { label: 'Free Zones', href: '/free-zones' },
   { label: 'Mainland', href: '/mainland' },
+  { label: 'Compare', href: '/compare' },
   { label: 'AI Search', href: '/ai-search' },
   { label: 'Activities', href: '/activities' },
   { label: 'Cost Calculator', href: '/calculator' },
@@ -15,6 +16,7 @@ const NAV = [
     children: [
       { label: 'Visa Services', href: '/visa-services' },
       { label: 'Golden Visa', href: '/golden-visa' },
+      { label: 'Founder Club', href: '/founder-club' },
       { label: 'Book Consultation', href: '/consultation' },
     ],
   },
