@@ -5,8 +5,13 @@ import { Button } from './ui/button';
 import { useAuth } from '../context/AuthContext';
 
 const NAV = [
-  { label: 'Free Zones', href: '/free-zones' },
-  { label: 'Mainland', href: '/mainland' },
+  {
+    label: 'Business Setup',
+    children: [
+      { label: 'Free Zones', href: '/free-zones' },
+      { label: 'Mainland', href: '/mainland' },
+    ],
+  },
   { label: 'Compare', href: '/compare' },
   { label: 'AI Search', href: '/ai-search' },
   { label: 'Activities', href: '/activities' },

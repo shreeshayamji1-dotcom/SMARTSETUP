@@ -23,6 +23,20 @@ export default function FreeZoneDetail() {
   const zoneAddons = getZoneAddons(pricingBundle.addons, zone);
   const zoneDiscounts = getZoneDiscounts(pricingBundle.discounts, zone);
 
+  const isVisaAddon = (a) => /visa/i.test(a.category || '') || /visa/i.test(a.addon_name || '');
+  const visaAddons = zoneAddons.filter(isVisaAddon);
+  const otherAddons = zoneAddons.filter((a) => !isVisaAddon(a));
+
+  // Show only 3 popular packages (0 / 1 / 2 visas); rest via dropdown
+  const pickCheapestByVisa = (n) =>
+    zonePackages
+      .filter((p) => (p.visa_count || 0) === n)
+      .sort((a, b) => (a.base_price || 0) - (b.base_price || 0))[0];
+  let popularPackages = [0, 1, 2].map(pickCheapestByVisa).filter(Boolean);
+  if (popularPackages.length === 0) popularPackages = zonePackages.slice(0, 3);
+  const popularKeys = new Set(popularPackages.map((p) => String(p.package_id || p.id)));
+  const extraPackages = zonePackages.filter((p) => !popularKeys.has(String(p.package_id || p.id)));
+
   useEffect(() => {
     let cancelled = false;
     loadFreezonePricingBundle()
@@ -145,14 +159,32 @@ export default function FreeZoneDetail() {
       <section className="py-20 bg-[#FFFCF5]">
         <div className="max-w-6xl mx-auto px-5 lg:px-8">
           <div className="text-center">
-            <div className="text-[11px] uppercase tracking-[0.22em] font-semibold brand-bronze">Live Supabase pricing</div>
-            <h2 className="mt-3 font-display text-4xl lg:text-5xl font-semibold text-slate-900 leading-[1.05]">Choose the exact package</h2>
-            <p className="mt-3 text-sm text-slate-600">These cards render from <span className="font-semibold">freezone_packages</span>. Benefits, add-ons and discounts below render from the matching Supabase tables.</p>
+            <div className="text-[11px] uppercase tracking-[0.22em] font-semibold brand-bronze">Verified pricing</div>
+            <h2 className="mt-3 font-display text-4xl lg:text-5xl font-semibold text-slate-900 leading-[1.05]">Choose your package</h2>
+            <p className="mt-3 text-sm text-slate-600">Transparent, up-to-date pricing. Select a package to see your total — visas and add-ons below.</p>
           </div>
 
           {zonePackages.length > 0 ? (
-            <div className="mt-10 grid md:grid-cols-2 gap-5">
-              {zonePackages.map((pkg) => {
+            <>
+            {extraPackages.length > 0 && (
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3" data-testid="package-more-dropdown">
+                <span className="text-sm text-slate-500">Need a different visa count?</span>
+                <select
+                  className="h-10 rounded-full border border-slate-300 bg-white px-4 text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                  value={popularKeys.has(selectedPackageId) ? '' : selectedPackageId}
+                  onChange={(e) => e.target.value && setSelectedPackageId(e.target.value)}
+                  data-testid="package-select"
+                >
+                  <option value="">More packages ({extraPackages.length})…</option>
+                  {extraPackages.map((p) => {
+                    const k = String(p.package_id || p.id);
+                    return <option key={k} value={k}>{p.package_name} — AED {(p.base_price || 0).toLocaleString()} · {p.visa_count || 0} visa{(p.visa_count || 0) === 1 ? '' : 's'}</option>;
+                  })}
+                </select>
+              </div>
+            )}
+            <div className="mt-8 grid md:grid-cols-3 gap-5">
+              {[...popularPackages, ...((popularKeys.has(selectedPackageId) || !selectedPackageId) ? [] : extraPackages.filter((p) => String(p.package_id || p.id) === selectedPackageId))].map((pkg) => {
                 const key = String(pkg.package_id || pkg.id);
                 const active = key === String(selectedPackage?.package_id || selectedPackage?.id);
                 const price = pkg.base_price || pkg.total_with_service || 0;
@@ -177,21 +209,22 @@ export default function FreeZoneDetail() {
                         <div className="font-display text-xl font-bold text-slate-900">AED {price.toLocaleString()}</div>
                       </div>
                       <div className="rounded-2xl bg-slate-50 p-3">
-                        <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Visas</div>
+                        <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Included Visas</div>
                         <div className="font-display text-xl font-bold text-slate-900">{pkg.visa_count || pkg.includes_visa || 0}</div>
                       </div>
                       <div className="rounded-2xl bg-slate-50 p-3">
-                        <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Source</div>
-                        <div className="text-xs font-semibold text-slate-700 line-clamp-2">{pkg.source || 'Supabase'}</div>
+                        <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Validity</div>
+                        <div className="text-sm font-semibold text-slate-700">{pkg.duration || '1 year'}</div>
                       </div>
                     </div>
                   </button>
                 );
               })}
             </div>
+            </>
           ) : (
             <div className="mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-6 text-sm text-amber-900">
-              Live package rows were not returned for this free zone. The page is showing static fallback only until Supabase RLS/table data is checked.
+              Pricing verification in progress for this jurisdiction. Please request a quotation and our team will share verified pricing right away.
             </div>
           )}
 
@@ -264,6 +297,34 @@ export default function FreeZoneDetail() {
         </div>
       </section>
 
+      {/* VISA OPTIONS */}
+      <section className="py-16 bg-[#FFFCF5]" data-testid="visa-options-section">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <div className="max-w-2xl">
+            <div className="text-[11px] uppercase tracking-[0.22em] font-semibold brand-bronze">Visa Options</div>
+            <h2 className="mt-3 font-display text-3xl lg:text-4xl font-semibold text-slate-900">Investor & employee visa costs</h2>
+            <p className="mt-2 text-sm text-slate-600">Add visas to any package. Transparent per-visa pricing.</p>
+          </div>
+          {visaAddons.length > 0 ? (
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {visaAddons.map((a, i) => (
+                <div key={a.id} className="card-elevated rounded-2xl p-5 flex items-start justify-between gap-3" data-testid={`visa-addon-${i}`}>
+                  <div>
+                    <div className="font-semibold text-slate-900">{a.addon_name}</div>
+                    <div className="text-xs text-slate-500 mt-0.5">{a.notes || 'Per visa'}</div>
+                  </div>
+                  <div className="font-display text-lg font-bold brand-emerald whitespace-nowrap">AED {Number(a.price || 0).toLocaleString()}</div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-600">
+              Visa pricing for {zone.name} is confirmed at quotation. Investor and employee visas typically range AED 3,500–6,000 per visa.
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* ADD-ONS */}
       <section className="py-20 bg-[#F8F3E8]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -272,7 +333,7 @@ export default function FreeZoneDetail() {
             <h2 className="mt-3 font-display text-3xl lg:text-4xl font-semibold text-slate-900">Optional services with transparent rates</h2>
           </div>
           <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {(zoneAddons.length ? zoneAddons : ADD_ONS.slice(0, 9).map((a) => ({ id: a.id, addon_name: a.label, unit: a.unit, price: a.price, notes: a.desc }))).slice(0, 9).map((a, i) => (
+            {(otherAddons.length ? otherAddons : ADD_ONS.slice(0, 9).map((a) => ({ id: a.id, addon_name: a.label, unit: a.unit, price: a.price, notes: a.desc }))).slice(0, 9).map((a, i) => (
               <div key={a.id} className="card-elevated rounded-2xl p-5 reveal" style={{ transitionDelay: `${i * 50}ms` }}>
                 <div className="flex items-start justify-between">
                   <div>

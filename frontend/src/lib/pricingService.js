@@ -84,6 +84,7 @@ export function normalizePackageAddon(input = {}) {
     slug: slugify(first(row, ['freezone', 'freezone_name'], '')),
     freezone_name: first(row, ['freezone', 'freezone_name'], ''),
     addon_name: name,
+    category: first(row, ['addon_category', 'category', 'group', 'service_group'], 'Other'),
     price: num(first(row, ['price', 'display_price', 'amount'], 0), 0),
     currency: first(row, ['currency'], 'AED'),
     unit: first(row, ['unit'], 'one-time'),
