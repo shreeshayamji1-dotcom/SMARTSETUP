@@ -8,24 +8,49 @@ const NAV = [
   {
     label: 'Business Setup',
     children: [
-      { label: 'Free Zones', href: '/free-zones' },
-      { label: 'Mainland', href: '/mainland' },
+      { label: 'Free Zone Finder', href: '/free-zones' },
+      { label: 'Mainland Setup', href: '/mainland' },
+      { label: 'Compare Jurisdictions', href: '/compare' },
+      { label: 'Activity Search', href: '/ai-search' },
+      { label: 'Cost Calculator', href: '/calculator' },
     ],
   },
-  { label: 'Compare', href: '/compare' },
-  { label: 'AI Search', href: '/ai-search' },
-  { label: 'Activities', href: '/activities' },
-  { label: 'Cost Calculator', href: '/calculator' },
   {
-    label: 'Services',
+    label: 'Visa Services',
     children: [
-      { label: 'Visa Services', href: '/visa-services' },
       { label: 'Golden Visa', href: '/golden-visa' },
-      { label: 'Founder Club', href: '/founder-club' },
-      { label: 'Book Consultation', href: '/consultation' },
+      { label: 'Investor Visa', href: '/services/investor-visa' },
+      { label: 'Employment Visa', href: '/services/employment-visa' },
+      { label: 'Family Visa', href: '/services/family-visa' },
     ],
   },
-  { label: 'Blog', href: '/blog' },
+  {
+    label: 'Corporate Services',
+    children: [
+      { label: 'VAT Registration', href: '/services/vat-registration' },
+      { label: 'Corporate Tax', href: '/services/corporate-tax' },
+      { label: 'Accounting', href: '/services/accounting' },
+      { label: 'PRO Services', href: '/services/pro-services' },
+      { label: 'Compliance', href: '/services/compliance' },
+    ],
+  },
+  {
+    label: 'Resources',
+    children: [
+      { label: 'Blog', href: '/blog' },
+      { label: 'FAQs', href: '/faqs' },
+      { label: 'Guides', href: '/blog' },
+      { label: 'Founder Club', href: '/founder-club' },
+    ],
+  },
+  {
+    label: 'Company',
+    children: [
+      { label: 'About', href: '/about' },
+      { label: 'Contact', href: '/consultation' },
+      { label: 'Consultation', href: '/consultation' },
+    ],
+  },
 ];
 
 export default function Navbar() {

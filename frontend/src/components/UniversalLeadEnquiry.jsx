@@ -33,22 +33,27 @@ export default function UniversalLeadEnquiry() {
         </button>
       )}
 
-      {/* Panel */}
+      {/* Panel — centered modal so all fields are clearly visible */}
       {open && (
         <div
-          data-testid="universal-lead-panel"
-          className="fixed right-3 top-1/2 -translate-y-1/2 z-[65] w-[min(360px,calc(100vw-1.5rem))] max-h-[calc(100vh-2rem)] overflow-y-auto fade-up"
+          data-testid="universal-lead-overlay"
+          className="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm fade-up"
+          onClick={() => setOpen(false)}
         >
-          <div className="relative">
+          <div
+            data-testid="universal-lead-panel"
+            className="relative w-[min(440px,calc(100vw-2rem))] max-h-[calc(100vh-3rem)] overflow-y-auto rounded-3xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setOpen(false)}
               data-testid="universal-lead-close"
-              className="absolute -top-2 -left-2 h-8 w-8 rounded-full bg-white text-slate-600 hover:text-slate-900 grid place-items-center shadow-md ring-1 ring-emerald-900/10 z-10"
+              className="absolute top-3 right-3 h-9 w-9 rounded-full bg-white text-slate-600 hover:text-slate-900 grid place-items-center shadow-md ring-1 ring-emerald-900/10 z-10"
               aria-label="Close enquiry"
             >
               <X className="h-4 w-4" />
             </button>
-            <LeadBox sourcePage="universal-sticky" compact />
+            <LeadBox sourcePage="universal-sticky" />
           </div>
         </div>
       )}

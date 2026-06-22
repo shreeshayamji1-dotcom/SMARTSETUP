@@ -22,6 +22,8 @@ const Checkout = lazy(() => import('./pages/Checkout'));
 const CheckoutSuccess = lazy(() => import('./pages/CheckoutSuccess'));
 const AISearchPage = lazy(() => import('./pages/AISearchPage'));
 const Compare = lazy(() => import('./pages/Compare'));
+const ServicePage = lazy(() => import('./pages/ServicePage'));
+const FAQs = lazy(() => import('./pages/FAQs'));
 const FounderClub = lazy(() => import('./pages/FounderClub'));
 const Blog = lazy(() => import('./pages/Blog'));
 const About = lazy(() => import('./pages/About'));
@@ -155,6 +157,8 @@ function App() {
                 <Route path="/checkout/success" element={<CheckoutSuccess />} />
                 <Route path="/ai-search" element={<AISearchPage />} />
                 <Route path="/compare" element={<Compare />} />
+                <Route path="/services/:slug" element={<ServicePage />} />
+                <Route path="/faqs" element={<FAQs />} />
                 <Route path="/founder-club" element={<FounderClub />} />
                 <Route path="/activities" element={<Activities />} />
                 <Route path="/blog" element={<Blog />} />

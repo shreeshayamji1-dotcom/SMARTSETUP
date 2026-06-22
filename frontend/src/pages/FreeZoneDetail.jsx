@@ -197,9 +197,9 @@ export default function FreeZoneDetail() {
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <div className="text-[10px] uppercase tracking-[0.22em] brand-bronze font-bold">{pkg.category || zone.name}</div>
+                        <div className="text-[10px] uppercase tracking-[0.22em] brand-bronze font-bold">{(pkg.visa_count || 0) === 0 ? 'Basic' : (pkg.visa_count || 0) === 1 ? 'Growth' : 'Premium'} · {pkg.visa_count || 0} Visa{(pkg.visa_count || 0) === 1 ? '' : 's'}</div>
                         <div className="mt-1 font-display text-2xl font-semibold text-slate-900">{pkg.package_name}</div>
-                        <div className="mt-1 text-sm text-slate-500">{pkg.workspace || 'Workspace as per authority package'} · {pkg.duration}</div>
+                        <div className="mt-1 text-sm text-slate-500">{pkg.workspace || 'Workspace as per authority package'} · {pkg.duration || '1 year'}</div>
                       </div>
                       {active && <span className="text-xs rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 font-semibold">Selected</span>}
                     </div>

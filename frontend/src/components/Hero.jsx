@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ShieldCheck, Sparkles, TrendingUp, MousePointerClick } from 'lucide-react';
+import { ShieldCheck, Sparkles, TrendingUp, MousePointerClick, Crown, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 import SmartFinder from './SmartFinder';
@@ -57,6 +57,30 @@ export default function Hero() {
               Compare Free Zones
             </Button>
           </div>
+
+          {/* Founder Club teaser */}
+          <button
+            type="button"
+            onClick={() => navigate('/founder-club')}
+            data-testid="hero-founder-club"
+            className="mt-6 w-full max-w-2xl text-left rounded-2xl border border-[#F0C674]/50 bg-gradient-to-r from-[#0F2A2A] to-[#13433f] text-white p-4 sm:p-5 fade-up delay-500 hover:shadow-xl hover:shadow-emerald-900/20 transition group"
+          >
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <div className="h-9 w-9 rounded-xl bg-[#F0C674]/15 grid place-items-center shrink-0">
+                  <Crown className="h-4 w-4 text-[#F0C674]" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#F0C674]">Founder Club</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#F0C674] text-[#0F2A2A] font-bold">AED 999 · First 500</span>
+                  </div>
+                  <div className="mt-1 text-sm font-medium text-white/90">10% renewal off · up to 15% service discounts · dedicated advisor · tax & VAT support</div>
+                </div>
+              </div>
+              <span className="hidden sm:inline-flex items-center gap-1 text-[#F0C674] text-sm font-semibold whitespace-nowrap group-hover:gap-2 transition-all">Join <ArrowRight className="h-4 w-4" /></span>
+            </div>
+          </button>
 
           <div className="mt-12 grid grid-cols-3 gap-4 max-w-xl fade-up delay-500">
             {[
