@@ -68,12 +68,15 @@ export default function ScratchCard() {
     ctx.beginPath();
     ctx.arc(x, y, 28, 0, Math.PI * 2);
     ctx.fill();
-    setScratchAmount((a) => Math.min(a + 1, 100));
-    if (scratchAmount > 25 && !revealed) {
-      setRevealed(true);
-      localStorage.setItem('ssu_scratch_coupon', JSON.stringify(reward));
-      localStorage.setItem('ssu_scratch_coupon_code', reward.code);
-    }
+    setScratchAmount((a) => {
+      const next = Math.min(a + 2, 100);
+      if (next > 20 && !revealed) {
+        setRevealed(true);
+        localStorage.setItem('ssu_scratch_coupon', JSON.stringify(reward));
+        localStorage.setItem('ssu_scratch_coupon_code', reward.code);
+      }
+      return next;
+    });
   };
 
   const close = () => {

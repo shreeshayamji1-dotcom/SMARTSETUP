@@ -1,0 +1,35 @@
+{
+  "summary": "Re-test of iteration_2 bugs after main agent fixes. Both bugs are RESOLVED. (1) Checkout step-4 pay toggle now reactive: pay-card-btn correctly switches between AED 999 (reserve) and AED 10,800 (full); card highlight (emerald/amber border) toggles correctly; lifted payAmount at component top-level is the single source of truth used by both Stripe button and bank panel. (2) ScratchCard reveal now fires inside functional setScratchAmount: after scratching the canvas, 'Your Code: SMARTSAVE8' panel appears, localStorage 'ssu_scratch_coupon' is written ({\"discount\":8,\"code\":\"SMARTSAVE8\"}), and 'Start My Application' navigates to /checkout?coupon=SMARTSAVE8 (NOT /consultation). Regression: order is still created on step 3->4 transition (SSU-20260622-8UF17 observed).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "verified_passing": [
+    "FIX 1 - /checkout step-4 initial state: Reserve highlighted with amber border, pay-card-btn shows 'Pay AED 999 securely'",
+    "FIX 1 - Click pay-choice-full: pay-card-btn text becomes 'Pay AED 10,800 securely', full card gets emerald border (border-emerald-600), reserve loses amber border",
+    "FIX 1 - Click pay-choice-reserve again: pay-card-btn returns to 'Pay AED 999 securely', reserve card amber border restored",
+    "FIX 1 - Bank Transfer panel renders Bank Details with Amount: AED 999 in reserve mode (uses same payAmount var, so will switch to AED 10,800 in full mode by symmetry with pay-card-btn)",
+    "FIX 1 - Order reference still created on advance to step 4 (e.g. SSU-20260622-8UF17, SSU-20260622-6D1TF)",
+    "FIX 2 - Scratch dialog appears ~6s after homepage load when ssu_scratch_seen/ssu_scratch_coupon cleared",
+    "FIX 2 - After scratching canvas (multiple horizontal+diagonal sweeps), 'YOUR CODE' panel + coupon code 'SMARTSAVE8' becomes visible",
+    "FIX 2 - localStorage 'ssu_scratch_coupon' = '{\"discount\":8,\"code\":\"SMARTSAVE8\"}', 'ssu_scratch_coupon_code' = 'SMARTSAVE8'",
+    "FIX 2 - 'Start My Application' button navigates to /checkout?coupon=SMARTSAVE8 (verified URL contains both /checkout and coupon query param)"
+  ],
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Minor: data-testid mismatch — bank panel uses data-testid='pay-bank-panel' (not 'bank-panel' as mentioned in some review descriptions). Not a bug, just naming consistency.",
+    "Checkout.jsx is now ~689 lines — extracting Step 4 (Payment) into its own component would improve maintainability (low priority).",
+    "ScratchCard close button keeps coupon code in localStorage even if dialog X-closed before scratching - by design (no action needed)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only retest)", "frontend": "100% (both targeted fixes verified, regression on order creation also passing)"},
+  "test_credentials": "Guest checkout (test@example.com); no auth needed for these flows.",
+  "seed_data_creation": "Created two test checkout orders during retest: SSU-20260622-8UF17 and SSU-20260622-6D1TF (guest, test@example.com).",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Iteration_2 bugs are fixed and validated: (1) Checkout step-4 pay-choice-full/reserve toggle is reactive and correctly updates pay-card-btn text + card borders. The fix lifted `payAmount` to the component top-level (line ~195 in Checkout.jsx), so it re-evaluates on payChoice change and is used by both Stripe button and bank panel (data-testid='pay-bank-panel'). (2) ScratchCard reveal works correctly — functional setScratchAmount now computes `next` and triggers setRevealed/localStorage write when next>20. 'Start My Application' navigates to /checkout?coupon=<CODE>. The reward.code observed was 'SMARTSAVE8' (8% off). Note: data-testid on bank panel is 'pay-bank-panel' not 'bank-panel'. All other phase requirements were passing in iteration_2 (Compare page, Coming Soon section, OAuth wiring, Navbar links, ScratchCard popup appearance + canvas cover).",
+  "rca of the issue": "Both bugs from iteration_2 are now resolved. (1) Bug 1 RCA: payAmount was previously declared inside an IIFE in the step-4 JSX render block, which made it harder to reason about and the reserve/full visual highlight didn't reliably reflect payChoice in some renders. Fix: payAmount = payChoice === 'full' ? breakdown.total : getPrebookingAmount() is now declared at component top-level (line 195) before the JSX return — it cleanly re-renders on payChoice state change and is consumed identically by pay-card-btn and pay-bank-panel. (2) Bug 2 RCA: scratch() previously read STALE scratchAmount from closure when comparing to >25 threshold, so setRevealed was never triggered. Fix: comparison + setRevealed/localStorage writes are now inside the functional setScratchAmount updater, using `next` (the new value), eliminating the stale closure. Both fixes are minimal, targeted, and verified end-to-end via Playwright in this iteration."
+}

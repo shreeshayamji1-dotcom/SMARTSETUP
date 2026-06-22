@@ -192,6 +192,8 @@ export default function Checkout() {
     return { items, total };
   }, [draft, currentZone, packageDiscount, selectedCoupon, serviceFeeAfterDiscount, originalServiceFee]);
 
+  const payAmount = payChoice === 'full' ? breakdown.total : getPrebookingAmount();
+
   useEffect(() => {
     const term = draft.business.activity.trim();
     if (term.length < 2) {
@@ -528,9 +530,7 @@ export default function Checkout() {
             )}
 
             {/* Step 4 — Payment */}
-            {step === 4 && order && (() => {
-              const payAmount = payChoice === 'full' ? breakdown.total : getPrebookingAmount();
-              return (
+            {step === 4 && order && (
               <div className="space-y-5 fade-up" data-testid="step-4">
                 <div className="flex items-center gap-2 text-brand-emerald font-semibold"><CreditCard className="h-4 w-4" /> Complete your payment</div>
 
@@ -608,8 +608,7 @@ export default function Checkout() {
                   </div>
                 )}
               </div>
-              );
-            })()}
+            )}
 
             {/* Step 5 — Confirmation */}
             {step === 5 && (
