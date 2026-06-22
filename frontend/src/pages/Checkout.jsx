@@ -74,6 +74,7 @@ export default function Checkout() {
   const [order, setOrder] = useState(null);
   const [busy, setBusy] = useState(false);
   const [payTab, setPayTab] = useState('card'); // 'card' | 'bank'
+  const [payChoice, setPayChoice] = useState('reserve'); // 'reserve' | 'full'
   const [bankProof, setBankProof] = useState({ file_base64: '', file_name: '', content_type: '', amount_aed: getPrebookingAmount(), reference: '', payer_name: '' });
 
   // Prefill contact from auth
@@ -282,7 +283,8 @@ export default function Checkout() {
     if (!bankProof.payer_name) return toast({ title: 'Add the payer name' });
     setBusy(true);
     try {
-      await markBankTransferSubmitted(order, { ...bankProof, reference: order.reference });
+      const amount = payChoice === 'full' ? breakdown.total : getPrebookingAmount();
+      await markBankTransferSubmitted(order, { ...bankProof, reference: order.reference, amount_aed: amount, payment_choice: payChoice });
       toast({ title: 'Proof received', description: 'We will verify within 24 hours.' });
       setStep(5);
     } catch (e) {
@@ -526,11 +528,38 @@ export default function Checkout() {
             )}
 
             {/* Step 4 — Payment */}
-            {step === 4 && order && (
+            {step === 4 && order && (() => {
+              const payAmount = payChoice === 'full' ? breakdown.total : getPrebookingAmount();
+              return (
               <div className="space-y-5 fade-up" data-testid="step-4">
-                <div className="flex items-center gap-2 text-brand-emerald font-semibold"><CreditCard className="h-4 w-4" /> Reserve with AED 999</div>
+                <div className="flex items-center gap-2 text-brand-emerald font-semibold"><CreditCard className="h-4 w-4" /> Complete your payment</div>
+
+                {/* Payment choice: Full vs Reserve */}
+                <div className="grid grid-cols-2 gap-3" data-testid="pay-choice">
+                  <button
+                    type="button"
+                    data-testid="pay-choice-full"
+                    onClick={() => setPayChoice('full')}
+                    className={`text-left rounded-2xl border-2 p-4 transition ${payChoice === 'full' ? 'border-emerald-600 bg-emerald-50' : 'border-slate-200 bg-white hover:border-emerald-300'}`}
+                  >
+                    <div className="text-[11px] uppercase tracking-[0.18em] font-bold brand-emerald">Pay Full Amount</div>
+                    <div className="font-display text-2xl font-bold text-slate-900 mt-1">AED {breakdown.total.toLocaleString()}</div>
+                    <div className="text-[11px] text-slate-500 mt-1">Pay the complete package now</div>
+                  </button>
+                  <button
+                    type="button"
+                    data-testid="pay-choice-reserve"
+                    onClick={() => setPayChoice('reserve')}
+                    className={`text-left rounded-2xl border-2 p-4 transition ${payChoice === 'reserve' ? 'border-amber-500 bg-amber-50' : 'border-slate-200 bg-white hover:border-amber-300'}`}
+                  >
+                    <div className="text-[11px] uppercase tracking-[0.18em] font-bold brand-bronze">Reserve Slot</div>
+                    <div className="font-display text-2xl font-bold text-slate-900 mt-1">AED {getPrebookingAmount().toLocaleString()}</div>
+                    <div className="text-[11px] text-slate-500 mt-1">Refundable hold · pay balance later</div>
+                  </button>
+                </div>
+
                 <div className="rounded-2xl bg-emerald-50 border border-emerald-900/10 p-4 text-sm">
-                  Order reference <span className="font-mono font-bold brand-emerald">{order.reference}</span>. Pay the AED {getPrebookingAmount()} pre-booking fee to lock your slot. Refundable before licence application.
+                  Order reference <span className="font-mono font-bold brand-emerald">{order.reference}</span>. {payChoice === 'full' ? <>Paying the full amount of <span className="font-semibold">AED {breakdown.total.toLocaleString()}</span>.</> : <>Pay the AED {getPrebookingAmount()} pre-booking fee to lock your slot. Refundable before licence application.</>}
                 </div>
 
                 <div className="flex gap-2 p-1 bg-slate-100 rounded-full text-xs font-semibold">
@@ -544,7 +573,7 @@ export default function Checkout() {
                       You&apos;ll be redirected to Stripe&apos;s secure checkout. We never see your card details.
                     </div>
                     <Button data-testid="pay-card-btn" disabled={busy} onClick={payCard} className="btn-primary rounded-full w-full h-12">
-                      {busy ? 'Redirecting…' : <>Pay AED {getPrebookingAmount()} securely <ChevronRight className="h-4 w-4 ml-1" /></>}
+                      {busy ? 'Redirecting…' : <>Pay AED {payAmount.toLocaleString()} securely <ChevronRight className="h-4 w-4 ml-1" /></>}
                     </Button>
                     <div className="text-[11px] text-slate-500 flex items-center gap-1.5"><ShieldCheck className="h-3 w-3" /> Card payments require a Stripe Edge Function; bank transfer is active in this build.</div>
                   </div>
@@ -558,6 +587,7 @@ export default function Checkout() {
                       <div><span className="text-slate-500">Bank:</span> {COMPANY_INFO.bank.name}</div>
                       <div><span className="text-slate-500">SWIFT/BIC:</span> {COMPANY_INFO.bank.swift}</div>
                       <div><span className="text-slate-500">IBAN:</span> <span className="font-mono">{COMPANY_INFO.bank.iban}</span></div>
+                      <div><span className="text-slate-500">Amount:</span> <span className="font-semibold">AED {payAmount.toLocaleString()}</span></div>
                       <div><span className="text-slate-500">Reference:</span> <span className="font-mono">{order.reference}</span></div>
                     </div>
                     <div>
@@ -578,7 +608,8 @@ export default function Checkout() {
                   </div>
                 )}
               </div>
-            )}
+              );
+            })()}
 
             {/* Step 5 — Confirmation */}
             {step === 5 && (

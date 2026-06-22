@@ -1,0 +1,59 @@
+{
+  "summary": "Frontend e2e testing of SmartSetupUAE Phase changes: Navbar Compare/Founder links, /compare page, /checkout dual-payment, FreeZones coming-soon, OAuth wiring, ScratchCard. 6/8 flows pass; 2 bugs found (critical payChoice toggle bug + scratch reveal closure bug).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "Checkout step 4 (Pay Full vs Reserve toggle)",
+        "issue": "CRITICAL: Selecting 'Pay Full Amount' (data-testid=pay-choice-full) does NOT consistently update the displayed pay amount on the Stripe button nor the Bank Transfer 'Amount:' line. In repeated runs, clicking pay-choice-full while state was 'reserve' kept the button at 'Pay AED 999 securely' and the Reserve card stayed highlighted (amber border), indicating setPayChoice('full') did not toggle state. The 'PAY FULL AMOUNT' card shows AED 10,800 statically but the rest of the UI (Stripe pay button text, bank-panel Amount line, summary banner) stays on AED 999. Toggling between choices is inconsistent across reloads — sometimes one direction works, sometimes neither. Bank panel never showed AED 10,800 in either run; screenshot confirms 'Reserve Slot' remained highlighted after clicking 'Pay Full Amount'. This breaks the entire dual-payment requirement.",
+        "selector": "[data-testid=pay-choice-full] / [data-testid=pay-choice-reserve] / [data-testid=pay-card-btn]",
+        "priority": "CRITICAL"
+      },
+      {
+        "component": "ScratchCard.jsx (reveal logic)",
+        "issue": "Discount code area ('Your Code' + reward.code) never appears after fully scratching the canvas. Root cause: in `scratch()`, the condition `if (scratchAmount > 25 && !revealed)` reads the STALE scratchAmount value from the previous render closure (functional setState was used to bump the counter but the comparison reads the old state). Therefore `setRevealed(true)` is never fired and `ssu_scratch_coupon` is not written to localStorage. The gold canvas cover and the visual reveal of '10% OFF' work correctly, but the coupon code panel + 'Start My Application' becomes useless because no coupon is persisted.",
+        "selector": "src/components/ScratchCard.jsx -> scratch()",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [
+      {
+        "flow": "Google/Facebook OAuth redirect URL verification",
+        "issue": "Could not capture window.location.href value programmatically in Playwright (Location prototype setter override is blocked in Chromium). Visual code review of src/pages/Login.jsx handleOAuth confirms it correctly builds `${REACT_APP_SUPABASE_URL}/auth/v1/authorize?provider=google|facebook&redirect_to=${origin}/auth/callback` and assigns to window.location.href. Buttons are wired (auth-google-btn, auth-facebook-btn) and not showing a 'coming soon' toast. Expected URL: https://smrsaedmuaizlesehpee.supabase.co/auth/v1/authorize?provider=google&redirect_to=<origin>/auth/callback (analogous for facebook). Manual verification recommended.",
+        "affected_selectors": ["[data-testid=auth-google-btn]", "[data-testid=auth-facebook-btn]"]
+      }
+    ],
+    "design_issues": []
+  },
+  "verified_passing": [
+    "Navbar contains /compare link and /founder-club under Services dropdown",
+    "/compare renders compare-page with TABLE, AED prices, 8 add buttons, 3 remove + 3 Start Application + 3 View Packages + Request Quote buttons per column",
+    "Add/Remove zone buttons work (clicked compare-add-X then compare-remove-Y, table updates)",
+    "/free-zones shows coming-soon-section with 13 jurisdiction cards, each having 'Pricing verification in progress' text and 'Request Quotation' button — no fake prices",
+    "/free-zones/ancfz detail page renders with AED prices (live data)",
+    "Checkout steps 1->2->3->4 navigation works, order is created and reference (e.g. SSU-20260622-I01L6) is shown",
+    "Step 4 shows both pay-choice-full (AED 10,800) and pay-choice-reserve (AED 999) cards with correct static amounts",
+    "ScratchCard popup appears ~6s after first visit; gold canvas cover is drawn over the discount initially; 'Start My Application' button navigates to /checkout (verified via code, not /consultation)"
+  ],
+  "test_report_links": [],
+  "action_items": [
+    "FIX (CRITICAL): payChoice state toggle in /app/frontend/src/pages/Checkout.jsx — clicks on pay-choice-full / pay-choice-reserve don't reliably update payAmount displayed on pay-card-btn and bank-panel Amount line. Verify setPayChoice is firing and that the IIFE-wrapped step-4 render reads the latest payChoice. Consider lifting payAmount calculation out of the IIFE into a useMemo/derived value at the component top level so it definitely re-evaluates on payChoice change. Also confirm no overlay (free-enquiry side widget) is intercepting clicks.",
+    "FIX (HIGH): ScratchCard.jsx scratch() reveal — replace `setScratchAmount((a) => Math.min(a+1, 100)); if (scratchAmount > 25 && !revealed) {...}` with logic that uses the NEW value, e.g. `setScratchAmount((a) => { const n = Math.min(a+1, 100); if (n > 25 && !revealed) { setRevealed(true); localStorage.setItem(...); } return n; });` or use a ref so the comparison sees the latest count.",
+    "Manually verify Google/Facebook OAuth buttons in a real browser to confirm they navigate to the Supabase authorize URL (capture via Network tab)."
+  ],
+  "critical_code_review_comments": [
+    "Checkout.jsx step-4 IIFE pattern `(() => { const payAmount = ... ; return <JSX/>; })()` works but is hard to reason about — extracting `payAmount` into a top-level useMemo dependent on [payChoice, breakdown.total] would also expose it to the bank panel/Stripe button cleanly.",
+    "ScratchCard.jsx has stale closure bug on scratchAmount comparison (classic React pitfall). Same handler will continue to misbehave on touch devices too.",
+    "Compare.jsx initialSlugs effect: `if (!selected.length && zones.length) setSelected(initialSlugs)` — fine, but if user removes all zones the effect re-populates them on next render because initialSlugs uses `zones.slice(0,3)`. Minor UX edge case.",
+    "Login.handleOAuth: good — uses REACT_APP_SUPABASE_URL env var and includes redirect_to. No 'coming soon' toast. Looks correct.",
+    "Checkout.jsx is now 689 lines — consider splitting Step 4 (Payment) into its own component for maintainability."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only test)", "frontend": "~75% (6 of 8 acceptance flows fully verified; 2 bugs)"},
+  "test_credentials": "Not required — guest checkout flow tested; OAuth providers not configured (expected per request).",
+  "seed_data_creation": "None — used live Supabase data; created one test checkout order SSU-20260622-I01L6 (guest, test@example.com).",
+  "retest_needed": true,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Two confirmed bugs: (1) Checkout step-4 payChoice toggle doesn't update displayed pay amount on pay-card-btn / bank panel — visual card highlight also stuck on Reserve after clicking Pay Full Amount. (2) ScratchCard reveal closure stale state. All other Phase requirements (Compare page, coming-soon section, navbar links, checkout step navigation, order creation, scratch popup appearance + canvas cover) verified working. OAuth URL was not captured by Playwright but code review confirms correct Supabase authorize URL is built.",
+  "rca of the issue": "Bug 1 (payChoice toggle): Two suspected root causes — (a) the IIFE wrapper around Step 4 JSX creates a new function each render, and the onClick handlers reference setPayChoice (stable React setter, should be fine), but the visible amount is computed via `const payAmount = payChoice === 'full' ? breakdown.total : getPrebookingAmount();` inside the IIFE. If React batches the state update with another setState that re-creates `order` or causes step to flip, the closure could read a stale payChoice. (b) Click event possibly intercepted by overlapping floating chat widget on the right (visible in screenshot). Recommended fix: lift payAmount into a useMemo at the component top so it's a single source of truth, and ensure pay-choice buttons have z-index above any floating widgets. Bug 2 (ScratchCard): classical React stale state in event handler — solved by computing new value inside functional setState and triggering reveal there."
+}

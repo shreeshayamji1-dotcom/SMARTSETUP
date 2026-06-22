@@ -47,11 +47,15 @@ export default function Login() {
     setTimeout(() => navigate(redirectTo), 300);
   };
 
-  const socialNotice = (provider) =>
-    toast({
-      title: `${provider} sign-in coming in Phase 5`,
-      description: 'For now, please use email + password. We are integrating Google + Facebook OAuth shortly.',
-    });
+  const handleOAuth = (provider) => {
+    const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+    if (!supabaseUrl) {
+      toast({ title: 'Configuration missing', description: 'Supabase URL is not set.' });
+      return;
+    }
+    const redirectUrl = `${window.location.origin}/auth/callback`;
+    window.location.href = `${supabaseUrl}/auth/v1/authorize?provider=${provider}&redirect_to=${encodeURIComponent(redirectUrl)}`;
+  };
 
   return (
     <div>
@@ -97,7 +101,7 @@ export default function Login() {
             <div className="mt-6 grid grid-cols-2 gap-2">
               <button
                 type="button"
-                onClick={() => socialNotice('Google')}
+                onClick={() => handleOAuth('google')}
                 data-testid="auth-google-btn"
                 className="h-11 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-sm font-semibold text-slate-700 flex items-center justify-center gap-2"
               >
@@ -106,7 +110,7 @@ export default function Login() {
               </button>
               <button
                 type="button"
-                onClick={() => socialNotice('Facebook')}
+                onClick={() => handleOAuth('facebook')}
                 data-testid="auth-facebook-btn"
                 className="h-11 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-sm font-semibold text-slate-700 flex items-center justify-center gap-2"
               >

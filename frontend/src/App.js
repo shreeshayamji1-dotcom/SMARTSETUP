@@ -27,6 +27,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const About = lazy(() => import('./pages/About'));
 const Consultation = lazy(() => import('./pages/Consultation'));
 const Login = lazy(() => import('./pages/Login'));
+const AuthCallback = lazy(() => import('./pages/AuthCallback'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const AdminPanel = lazy(() => import('./pages/AdminPanel'));
 const Activities = lazy(() => import('./pages/Activities'));
@@ -160,6 +161,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/consultation" element={<Consultation />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/auth/callback" element={<AuthCallback />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/admin" element={<AdminPanel />} />
                 <Route path="/privacy" element={<Privacy />} />

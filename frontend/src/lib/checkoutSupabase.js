@@ -219,6 +219,8 @@ export async function markBankTransferSubmitted(order, bankProof) {
   const query = `?id=eq.${postgrestValue(order.id)}`;
   const noteSuffix = [
     'Bank transfer proof submitted',
+    bankProof.payment_choice === 'full' ? 'FULL PAYMENT' : 'RESERVE SLOT (AED 999)',
+    bankProof.amount_aed ? `Amount: AED ${Number(bankProof.amount_aed).toLocaleString()}` : null,
     bankProof.reference ? `Ref: ${bankProof.reference}` : null,
     bankProof.payer_name ? `Payer: ${bankProof.payer_name}` : null,
     bankProof.file_name ? `File: ${bankProof.file_name}` : null,

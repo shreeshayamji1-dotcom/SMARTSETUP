@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { ZONES } from '../data/zones';
+import { ZONES, COMING_SOON_JURISDICTIONS } from '../data/zones';
 import { loadFreezonePackages, mergeZonesWithLivePackages } from '../lib/pricingService';
 import { Building2, Clock, Users2, Sparkles, Filter, ArrowUpRight, MapPin, LayoutGrid, List, Rows3, Maximize2 } from 'lucide-react';
 import { Input } from '../components/ui/input';
@@ -206,6 +206,30 @@ export default function FreeZones() {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Phase 4 — Jurisdictions pending verified pricing */}
+      <section className="py-12 bg-[#F8F3E8]" data-testid="coming-soon-section">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <h2 className="font-display text-2xl lg:text-3xl font-semibold text-slate-900">More jurisdictions — pricing verification in progress</h2>
+          <p className="mt-2 text-slate-600 text-sm max-w-2xl">We support these jurisdictions but only publish prices once verified. Request a quotation and we'll share the latest verified pricing.</p>
+          <div className="mt-7 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {COMING_SOON_JURISDICTIONS.map((j) => (
+              <div key={j.id} className="rounded-2xl border border-slate-200 bg-white p-5" data-testid={`coming-soon-${j.id}`}>
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">{j.status.replace('_', ' ')}</span>
+                  <MapPin className="h-3.5 w-3.5 text-slate-400" />
+                </div>
+                <div className="font-display text-lg font-semibold text-slate-900 mt-3">{j.name}</div>
+                <div className="text-xs text-slate-500">{j.loc}</div>
+                <div className="mt-3 text-sm text-slate-600">Pricing verification in progress.</div>
+                <Link to={`/consultation?service=${encodeURIComponent(j.name)}`}>
+                  <Button size="sm" variant="outline" className="rounded-full mt-4 border-slate-300 h-9 text-xs">Request Quotation</Button>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <Footer />

@@ -115,6 +115,21 @@ export function AuthProvider({ children }) {
     }
   };
 
+  const loginWithToken = async (token, refreshToken = '') => {
+    try {
+      const authUser = await supabaseRest.getUser(token);
+      const profileUser = await loadProfile(authUser, token);
+      if (profileUser.is_active === false) throw new Error('This account is disabled.');
+      localStorage.setItem('ssu_token', token);
+      if (refreshToken) localStorage.setItem('ssu_refresh_token', refreshToken);
+      localStorage.setItem('ssu_user', JSON.stringify(profileUser));
+      setUser(profileUser);
+      return { ok: true, user: profileUser };
+    } catch (e) {
+      return { ok: false, error: e.message || 'Could not complete sign-in' };
+    }
+  };
+
   const logout = () => {
     localStorage.removeItem('ssu_token');
     localStorage.removeItem('ssu_refresh_token');
@@ -122,7 +137,7 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
 
-  return <AuthContext.Provider value={{ user, loading, login, register, logout }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, loading, login, register, logout, loginWithToken }}>{children}</AuthContext.Provider>;
 }
 
 export const useAuth = () => useContext(AuthContext);
