@@ -126,7 +126,9 @@ export async function loadFreezonePackages() {
   for (const attempt of attempts) {
     try {
       const rows = await attempt();
-      return (rows || []).map(normalizeFreezonePackage).filter((pkg) => pkg.is_active !== false);
+      return (rows || [])
+        .map(normalizeFreezonePackage)
+        .filter((pkg) => pkg.is_active !== false && (!pkg.source || pkg.source.toLowerCase() !== 'renewal'));
     } catch (error) {
       lastError = error;
     }
@@ -164,7 +166,9 @@ export function getZonePackages(packages = [], zone) {
   return packages.filter((pkg) => {
     const pkgSlug = String(pkg.slug || '').toLowerCase();
     const pkgName = String(pkg.freezone_name || '').toLowerCase();
-    return pkgSlug === zoneKey || slugify(pkg.freezone_name) === zoneKey || pkgName === String(zone.name || '').toLowerCase();
+    // Filter for NEW REGISTRATION only, not renewal
+    const isNewRegistration = !pkg.source || pkg.source.toLowerCase() !== 'renewal';
+    return (pkgSlug === zoneKey || slugify(pkg.freezone_name) === zoneKey || pkgName === String(zone.name || '').toLowerCase()) && isNewRegistration;
   }).sort((a, b) => (a.base_price || 0) - (b.base_price || 0));
 }
 

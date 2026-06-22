@@ -10,7 +10,7 @@ import { useToast } from '../hooks/use-toast';
 import { COMPANY_INFO } from '../data/zones';
 import { createCheckoutOrder, loadCheckoutPricing, markBankTransferSubmitted, getPrebookingAmount, getVisaPrice, getDefaultServiceFee } from '../lib/checkoutSupabase';
 import { searchActivities } from '../lib/activitySearchService';
-import { CheckCircle2, ChevronLeft, ChevronRight, CreditCard, Landmark, Upload, ShieldCheck, Sparkles, Building2, FileText, Tag } from 'lucide-react';
+import { CheckCircle2, ChevronLeft, ChevronRight, CreditCard, Landmark, Upload, ShieldCheck, Sparkles, Building2, FileText, Tag, X } from 'lucide-react';
 
 const COUNTRY_CODES = [
   { code: '+971', label: 'AE +971' },
@@ -33,10 +33,9 @@ const COUPONS = [
 
 const STEPS = [
   { id: 1, label: 'Package' },
-  { id: 2, label: 'Contact' },
-  { id: 3, label: 'Business' },
-  { id: 4, label: 'Payment' },
-  { id: 5, label: 'Confirmed' },
+  { id: 2, label: 'Details' },
+  { id: 3, label: 'Payment' },
+  { id: 4, label: 'Confirmed' },
 ];
 
 function defaultDraft() {
@@ -51,7 +50,7 @@ function defaultDraft() {
     package_name: '',
     total_aed: 0,
     contact: { name: '', email: '', phone_code: '+971', phone: '' },
-    business: { activity: '', company_names: ['', '', ''], shareholders: 1 },
+    business: { activity: '', activities: [], company_names: ['', '', ''], shareholders: 1 },
   };
 }
 
@@ -74,7 +73,8 @@ export default function Checkout() {
   const [order, setOrder] = useState(null);
   const [busy, setBusy] = useState(false);
   const [payTab, setPayTab] = useState('card'); // 'card' | 'bank'
-  const [payChoice, setPayChoice] = useState('reserve'); // 'reserve' | 'full'
+  const [payChoice, setPayChoice] = useState('full'); // 'reserve' | 'full'
+  const [activityQuery, setActivityQuery] = useState('');
   const [bankProof, setBankProof] = useState({ file_base64: '', file_name: '', content_type: '', amount_aed: getPrebookingAmount(), reference: '', payer_name: '' });
 
   // Prefill contact from auth
@@ -193,9 +193,33 @@ export default function Checkout() {
   }, [draft, currentZone, packageDiscount, selectedCoupon, serviceFeeAfterDiscount, originalServiceFee]);
 
   const payAmount = payChoice === 'full' ? breakdown.total : getPrebookingAmount();
+  const activityLimit = Number(currentZone?.activities_allowed || currentZone?.raw?.activities_allowed || 3);
+  const selectedActivities = draft.business.activities || [];
+
+  const addActivity = (name) => {
+    setActivityQuery('');
+    setActivitySuggestions([]);
+    setDraft((d) => {
+      const list = d.business.activities || [];
+      if (list.includes(name)) return d;
+      if (list.length >= activityLimit) {
+        toast({ title: `Activity limit reached`, description: `This package allows ${activityLimit} activities. Upgrade your package to add more.` });
+        return d;
+      }
+      const activities = [...list, name];
+      return { ...d, business: { ...d.business, activities, activity: activities[0] } };
+    });
+  };
+
+  const removeActivity = (name) => {
+    setDraft((d) => {
+      const activities = (d.business.activities || []).filter((a) => a !== name);
+      return { ...d, business: { ...d.business, activities, activity: activities[0] || '' } };
+    });
+  };
 
   useEffect(() => {
-    const term = draft.business.activity.trim();
+    const term = activityQuery.trim();
     if (term.length < 2) {
       setActivitySuggestions([]);
       return undefined;
@@ -208,7 +232,7 @@ export default function Checkout() {
       }
     }, 250);
     return () => window.clearTimeout(timer);
-  }, [draft.business.activity]);
+  }, [activityQuery]);
 
   // ----- Step 1 actions -----
   const upd = (path, value) => {
@@ -229,11 +253,9 @@ export default function Checkout() {
     if (step === 2) {
       const { name, email, phone } = draft.contact;
       if (!name || !email || !phone) return toast({ title: 'Add name, email and phone' });
+      if (!draft.business.activities || draft.business.activities.length === 0) return toast({ title: 'Add at least one business activity' });
     }
-    if (step === 3) {
-      if (!draft.business.activity) return toast({ title: 'Enter your business activity' });
-    }
-    if (step === 3) {
+    if (step === 2) {
       // Create the order now
       setBusy(true);
       try {
@@ -242,7 +264,7 @@ export default function Checkout() {
         if (data?.claim_token) {
           try { sessionStorage.setItem(`ssu_order_${data.id}`, data.claim_token); } catch (_e) {}
         }
-        setStep(4);
+        setStep(3);
       } catch (e) {
         toast({ title: 'Could not create order', description: e.message || 'Please try again.' });
       } finally {
@@ -250,7 +272,7 @@ export default function Checkout() {
       }
       return;
     }
-    setStep((s) => Math.min(5, s + 1));
+    setStep((s) => Math.min(4, s + 1));
   };
 
   const back = () => setStep((s) => Math.max(1, s - 1));
@@ -338,7 +360,7 @@ export default function Checkout() {
       <section className="hero-gradient grain">
         <div className="max-w-6xl mx-auto px-5 lg:px-8 pt-10 pb-6">
           <div className="flex items-center gap-2 fade-up"><Sparkles className="h-4 w-4 brand-bronze" /><span className="text-xs uppercase tracking-[0.22em] text-slate-600 font-semibold">Secure Checkout</span></div>
-          <h1 className="mt-3 font-display text-4xl lg:text-5xl font-semibold leading-[1.02] text-slate-900 fade-up delay-100">Reserve your setup<br /><span className="shine-text">in five quick steps.</span></h1>
+          <h1 className="mt-3 font-display text-4xl lg:text-5xl font-semibold leading-[1.02] text-slate-900 fade-up delay-100">Simple setup<br /><span className="shine-text">in just three steps.</span></h1>
 
           {/* Stepper */}
           <div className="mt-8 flex items-center gap-2 lg:gap-4 fade-up delay-200" data-testid="checkout-stepper">
@@ -372,9 +394,11 @@ export default function Checkout() {
             {/* Step 1 — Package review */}
             {step === 1 && (
               <div className="space-y-5 fade-up" data-testid="step-1">
-                <div className="flex items-center gap-2 text-brand-emerald font-semibold"><Building2 className="h-4 w-4" /> Review your package</div>
+                <div className="flex items-center gap-2 text-brand-emerald font-semibold"><Building2 className="h-4 w-4" /> Select your package</div>
+                
+                {/* Simplified Package Selection */}
                 <div>
-                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Jurisdiction</label>
+                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Freezone or Jurisdiction</label>
                   <Select value={selectedPackageKey} onValueChange={(key) => {
                     const z = zones.find((x) => (x.package_id || x.selection_id || x.slug) === key);
                     if (z) setDraft((d) => ({ ...d, zone_slug: z.slug, zone_name: z.name, package_id: z.package_id || null, package_name: z.package_name || z.name }));
@@ -382,156 +406,166 @@ export default function Checkout() {
                     <SelectTrigger className="mt-1 h-11 rounded-lg" data-testid="step-1-zone-select"><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {zones.map((z) => (
-                        <SelectItem key={z.package_id || z.selection_id || z.slug} value={z.package_id || z.selection_id || z.slug}>{z.name}{z.package_name ? ` — ${z.package_name}` : ''} — AED {Number(z.gov || 0).toLocaleString()}+</SelectItem>
+                        <SelectItem key={z.package_id || z.selection_id || z.slug} value={z.package_id || z.selection_id || z.slug}>{z.name}{z.package_name ? ` — ${z.package_name}` : ''}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+
+                {/* Quick Options */}
+                <div className="grid grid-cols-3 gap-3">
                   <div>
                     <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Visas</label>
                     <Select value={String(draft.visa_count)} onValueChange={(v) => upd('visa_count', Number(v))}>
-                      <SelectTrigger className="mt-1 h-11 rounded-lg"><SelectValue /></SelectTrigger>
-                      <SelectContent>{[0,1,2,3,4,5].map((n) => (<SelectItem key={n} value={String(n)}>{n} visa{n !== 1 ? 's' : ''}</SelectItem>))}</SelectContent>
+                      <SelectTrigger className="mt-1 h-11 rounded-lg text-sm"><SelectValue /></SelectTrigger>
+                      <SelectContent>{[0,1,2,3,4,5].map((n) => (<SelectItem key={n} value={String(n)}>{n}</SelectItem>))}</SelectContent>
                     </Select>
                   </div>
                   <div>
-                    <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Office</label>
+                    <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Office Space</label>
                     <Select value={draft.office_type} onValueChange={(v) => upd('office_type', v)}>
-                      <SelectTrigger className="mt-1 h-11 rounded-lg"><SelectValue /></SelectTrigger>
+                      <SelectTrigger className="mt-1 h-11 rounded-lg text-sm"><SelectValue /></SelectTrigger>
                       <SelectContent>{['Virtual Desk','Flexi Desk','Private Office'].map((o) => (<SelectItem key={o} value={o}>{o}</SelectItem>))}</SelectContent>
                     </Select>
                   </div>
+                  <div>
+                    <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Coupon</label>
+                    <Select value={couponCode} onValueChange={setCouponCode}>
+                      <SelectTrigger className="mt-1 h-11 rounded-lg text-sm"><SelectValue /></SelectTrigger>
+                      <SelectContent>{dynamicCoupons.map((coupon) => <SelectItem key={coupon.code} value={coupon.code}>{coupon.code}</SelectItem>)}</SelectContent>
+                    </Select>
+                  </div>
                 </div>
-                <div>
-                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Popular add-ons</label>
-                  <div className="mt-2 grid sm:grid-cols-2 gap-2">
-                    {addonsData.slice(0, 6).map((a) => {
+
+                {/* Add-ons */}
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-600 block mb-3">Optional Services (Click to Add)</label>
+                  <div className="grid sm:grid-cols-2 gap-2">
+                    {addonsData.slice(0, 4).map((a) => {
                       const checked = draft.addons.some((x) => x.id === a.id);
                       return (
-                        <label key={a.id} className={`flex items-center justify-between gap-2 p-3 rounded-xl border cursor-pointer ${checked ? 'border-emerald-500 bg-emerald-50' : 'border-slate-200 bg-white hover:border-slate-300'}`}>
-                          <div className="flex items-center gap-2">
-                            <input type="checkbox" checked={checked} onChange={(e) => {
-                              setDraft((d) => ({
-                                ...d,
-                                addons: e.target.checked
-                                  ? [...d.addons, { id: a.id, label: a.label, price: a.price }]
-                                  : d.addons.filter((x) => x.id !== a.id),
-                              }));
-                            }} className="accent-emerald-600" />
-                            <span className="text-sm font-medium text-slate-800">{a.label}</span>
+                        <label key={a.id} className={`flex items-center gap-2 p-2.5 rounded-lg border cursor-pointer text-sm transition ${checked ? 'border-emerald-500 bg-emerald-50 font-medium' : 'border-slate-300 bg-white hover:border-emerald-300'}`}>
+                          <input type="checkbox" checked={checked} onChange={(e) => {
+                            setDraft((d) => ({
+                              ...d,
+                              addons: e.target.checked
+                                ? [...d.addons, { id: a.id, label: a.label, price: a.price }]
+                                : d.addons.filter((x) => x.id !== a.id),
+                            }));
+                          }} className="accent-emerald-600" />
+                          <div className="flex-1">
+                            <div className="font-medium text-slate-800">{a.label}</div>
+                            <div className="text-xs text-slate-500">AED {a.price.toLocaleString()}/yr</div>
                           </div>
-                          <span className="text-xs font-semibold text-slate-600">AED {a.price.toLocaleString()}</span>
                         </label>
                       );
                     })}
                   </div>
                 </div>
-                <div className="rounded-2xl border border-emerald-900/10 bg-emerald-50/60 p-4">
-                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] brand-emerald font-semibold"><Tag className="h-4 w-4" /> Coupon / first 500 founder offer</div>
-                  <div className="mt-3 grid md:grid-cols-[1fr_190px] gap-3">
-                    <Select value={couponCode} onValueChange={setCouponCode}>
-                      <SelectTrigger className="h-11 rounded-lg bg-white"><SelectValue /></SelectTrigger>
-                      <SelectContent>{dynamicCoupons.map((coupon) => <SelectItem key={coupon.code} value={coupon.code}>{coupon.code} — {coupon.label}</SelectItem>)}</SelectContent>
-                    </Select>
-                    <Input value={couponCode} onChange={(e) => setCouponCode(e.target.value.toUpperCase())} className="h-11 rounded-lg bg-white" placeholder="Coupon code" />
-                  </div>
-                  <div className="mt-2 text-xs text-emerald-800">First 500 customers: SmartSetupUAE service fee is crossed out and shown as AED 0.</div>
-                  {!isFounderClubMember && (
-                    <div className="mt-2 text-xs text-amber-800">FOUNDER5 is available to Founder Club members only. <button type="button" onClick={() => navigate('/founder-club')} className="underline">Join Founder Club</button>.</div>
-                  )}
-                </div>
               </div>
             )}
 
-            {/* Step 2 — Contact */}
+            {/* Step 2 — Contact & Business Details */}
             {step === 2 && (
-              <div className="space-y-4 fade-up" data-testid="step-2">
-                <div className="flex items-center gap-2 text-brand-emerald font-semibold"><ShieldCheck className="h-4 w-4" /> Your contact details</div>
+              <div className="space-y-6 fade-up" data-testid="step-2">
+                {/* Contact Section */}
+                <div>
+                  <div className="flex items-center gap-2 text-brand-emerald font-semibold mb-4"><ShieldCheck className="h-4 w-4" /> Your Information</div>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Full Name</label>
+                      <Input data-testid="contact-name" value={draft.contact.name} onChange={(e) => upd('contact.name', e.target.value)} className="mt-1 h-11 rounded-lg" placeholder="Your name" />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Email</label>
+                      <Input data-testid="contact-email" type="email" value={draft.contact.email} onChange={(e) => upd('contact.email', e.target.value)} className="mt-1 h-11 rounded-lg" placeholder="you@company.com" />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Phone / WhatsApp</label>
+                      <div className="mt-1 grid grid-cols-[100px_1fr] gap-2">
+                        <Select value={draft.contact.phone_code || '+971'} onValueChange={(v) => upd('contact.phone_code', v)}>
+                          <SelectTrigger className="h-11 rounded-lg"><SelectValue /></SelectTrigger>
+                          <SelectContent>{COUNTRY_CODES.map((c) => <SelectItem key={c.code} value={c.code}>{c.label}</SelectItem>)}</SelectContent>
+                        </Select>
+                        <Input data-testid="contact-phone" value={draft.contact.phone} onChange={(e) => upd('contact.phone', e.target.value.replace(/[^0-9 ]/g, ''))} className="h-11 rounded-lg" placeholder="50 123 4567" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Business Section */}
+                <div className="pt-4 border-t border-slate-200">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2 text-brand-emerald font-semibold"><FileText className="h-4 w-4" /> Business Activities</div>
+                    <span data-testid="activity-counter" className={`text-xs font-bold px-2.5 py-1 rounded-full ${selectedActivities.length >= activityLimit ? 'bg-amber-100 text-amber-800' : 'bg-emerald-50 brand-emerald'}`}>
+                      {selectedActivities.length} / {activityLimit} Activities Used
+                    </span>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="relative">
+                      <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Search & add activities (DED list)</label>
+                      <Input
+                        data-testid="business-activity"
+                        value={activityQuery}
+                        onChange={(e) => setActivityQuery(e.target.value)}
+                        disabled={selectedActivities.length >= activityLimit}
+                        className="mt-1 h-11 rounded-lg"
+                        placeholder={selectedActivities.length >= activityLimit ? `Limit of ${activityLimit} reached` : 'e.g., E-Commerce, Consultancy, Trading'}
+                      />
+                      {activitySuggestions.length > 0 && (
+                        <div className="absolute z-30 mt-1 w-full rounded-xl border border-slate-200 bg-white shadow-xl overflow-hidden max-h-48 overflow-y-auto">
+                          {activitySuggestions.map((activity) => (
+                            <button
+                              key={activity.id}
+                              type="button"
+                              data-testid={`activity-suggestion-${activity.id}`}
+                              onClick={() => addActivity(activity.activity_name)}
+                              className="block w-full px-4 py-2 text-left text-sm hover:bg-emerald-50 border-b border-slate-100 last:border-0"
+                            >
+                              <span className="font-semibold text-slate-900">{activity.activity_name}</span>
+                              <span className="ml-2 text-xs text-slate-500">{activity.activity_code}</span>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {selectedActivities.length > 0 && (
+                      <div className="flex flex-wrap gap-2" data-testid="selected-activities">
+                        {selectedActivities.map((a) => (
+                          <span key={a} className="inline-flex items-center gap-1.5 text-xs font-medium bg-emerald-600 text-white pl-3 pr-2 py-1.5 rounded-full">
+                            {a}
+                            <button type="button" onClick={() => removeActivity(a)} data-testid={`remove-activity-${a}`} className="hover:bg-white/20 rounded-full p-0.5"><X className="h-3 w-3" /></button>
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <p className="text-[11px] text-slate-500">This package allows up to {activityLimit} activities. Need more? Choose a higher package or request a quote.</p>
+                  </div>
+                  <div className="mt-4">
+                    <div>
+                      <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Number of Shareholders</label>
+                      <Select value={String(draft.business.shareholders)} onValueChange={(v) => upd('business.shareholders', Number(v))}>
+                        <SelectTrigger className="mt-1 h-11 rounded-lg"><SelectValue /></SelectTrigger>
+                        <SelectContent>{[1,2,3,4,5].map((n) => (<SelectItem key={n} value={String(n)}>{n}</SelectItem>))}</SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                </div>
+
                 {!user && (
-                  <div className="text-xs p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900">
-                    Continue as guest, or <button type="button" onClick={() => navigate(`/login?redirect=${encodeURIComponent('/checkout')}`)} className="underline font-semibold">sign in</button> to track your order in the client portal.
+                  <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-900">
+                    Continue as guest or <button type="button" onClick={() => navigate(`/login?redirect=${encodeURIComponent('/checkout')}`)} className="underline font-semibold">sign in</button> to track your order.
                   </div>
                 )}
-                <div>
-                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Full Name</label>
-                  <Input data-testid="contact-name" value={draft.contact.name} onChange={(e) => upd('contact.name', e.target.value)} className="mt-1 h-11 rounded-lg" placeholder="Your name" />
-                </div>
-                <div>
-                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Email</label>
-                  <Input data-testid="contact-email" type="email" value={draft.contact.email} onChange={(e) => upd('contact.email', e.target.value)} className="mt-1 h-11 rounded-lg" placeholder="you@company.com" />
-                </div>
-                <div>
-                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Phone / WhatsApp</label>
-                  <div className="mt-1 grid grid-cols-[120px_1fr] gap-2">
-                    <Select value={draft.contact.phone_code || '+971'} onValueChange={(v) => upd('contact.phone_code', v)}>
-                      <SelectTrigger className="h-11 rounded-lg"><SelectValue /></SelectTrigger>
-                      <SelectContent>{COUNTRY_CODES.map((c) => <SelectItem key={c.code} value={c.code}>{c.label}</SelectItem>)}</SelectContent>
-                    </Select>
-                    <Input data-testid="contact-phone" value={draft.contact.phone} onChange={(e) => upd('contact.phone', e.target.value.replace(/[^0-9 ]/g, ''))} className="h-11 rounded-lg" placeholder="50 123 4567" />
-                  </div>
-                </div>
               </div>
             )}
 
-            {/* Step 3 — Business */}
-            {step === 3 && (
-              <div className="space-y-4 fade-up" data-testid="step-3">
-                <div className="flex items-center gap-2 text-brand-emerald font-semibold"><FileText className="h-4 w-4" /> Business details</div>
-                <div className="relative">
-                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Primary business activity</label>
-                  <Input data-testid="business-activity" value={draft.business.activity} onChange={(e) => upd('business.activity', e.target.value)} className="mt-1 h-11 rounded-lg" placeholder="e.g., E-Commerce, Consultancy" />
-                  {activitySuggestions.length > 0 && (
-                    <div className="absolute z-30 mt-1 w-full rounded-xl border border-slate-200 bg-white shadow-xl overflow-hidden">
-                      {activitySuggestions.map((activity) => (
-                        <button
-                          key={activity.id}
-                          type="button"
-                          onClick={() => {
-                            upd('business.activity', activity.activity_name);
-                            setActivitySuggestions([]);
-                          }}
-                          className="block w-full px-4 py-2 text-left text-sm hover:bg-emerald-50 border-b border-slate-100 last:border-0"
-                        >
-                          <span className="font-semibold text-slate-900">{activity.activity_name}</span>
-                          <span className="ml-2 text-xs text-slate-500">{activity.activity_code} · {activity.freezone}</span>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Number of shareholders</label>
-                  <Select value={String(draft.business.shareholders)} onValueChange={(v) => upd('business.shareholders', Number(v))}>
-                    <SelectTrigger className="mt-1 h-11 rounded-lg"><SelectValue /></SelectTrigger>
-                    <SelectContent>{[1,2,3,4,5].map((n) => (<SelectItem key={n} value={String(n)}>{n}</SelectItem>))}</SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Proposed company names (up to 3)</label>
-                  <div className="mt-1 space-y-2">
-                    {[0,1,2].map((i) => (
-                      <Input
-                        key={i}
-                        data-testid={`company-name-${i}`}
-                        value={draft.business.company_names[i] || ''}
-                        onChange={(e) => {
-                          const arr = [...(draft.business.company_names || ['', '', ''])];
-                          arr[i] = e.target.value;
-                          upd('business.company_names', arr);
-                        }}
-                        className="h-11 rounded-lg"
-                        placeholder={`Option ${i + 1}${i === 0 ? ' (preferred)' : ''}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Step 4 — Payment */}
-            {step === 4 && order && (
-              <div className="space-y-5 fade-up" data-testid="step-4">
+            {/* Step 3 — Payment */}
+            {step === 3 && order && (
+              <div className="space-y-5 fade-up" data-testid="step-3">
                 <div className="flex items-center gap-2 text-brand-emerald font-semibold"><CreditCard className="h-4 w-4" /> Complete your payment</div>
 
                 {/* Payment choice: Full vs Reserve */}
@@ -552,14 +586,14 @@ export default function Checkout() {
                     onClick={() => setPayChoice('reserve')}
                     className={`text-left rounded-2xl border-2 p-4 transition ${payChoice === 'reserve' ? 'border-amber-500 bg-amber-50' : 'border-slate-200 bg-white hover:border-amber-300'}`}
                   >
-                    <div className="text-[11px] uppercase tracking-[0.18em] font-bold brand-bronze">Reserve Slot</div>
+                    <div className="text-[11px] uppercase tracking-[0.18em] font-bold brand-bronze">Pay Deposit</div>
                     <div className="font-display text-2xl font-bold text-slate-900 mt-1">AED {getPrebookingAmount().toLocaleString()}</div>
                     <div className="text-[11px] text-slate-500 mt-1">Refundable hold · pay balance later</div>
                   </button>
                 </div>
 
                 <div className="rounded-2xl bg-emerald-50 border border-emerald-900/10 p-4 text-sm">
-                  Order reference <span className="font-mono font-bold brand-emerald">{order.reference}</span>. {payChoice === 'full' ? <>Paying the full amount of <span className="font-semibold">AED {breakdown.total.toLocaleString()}</span>.</> : <>Pay the AED {getPrebookingAmount()} pre-booking fee to lock your slot. Refundable before licence application.</>}
+                    Order reference <span className="font-mono font-bold brand-emerald">{order.reference}</span>. {payChoice === 'full' ? <>Paying the full amount of <span className="font-semibold">AED {breakdown.total.toLocaleString()}</span>.</> : <>Pay the AED {getPrebookingAmount()} deposit to lock your slot. Refundable before licence application.</>}
                 </div>
 
                 <div className="flex gap-2 p-1 bg-slate-100 rounded-full text-xs font-semibold">
@@ -610,9 +644,9 @@ export default function Checkout() {
               </div>
             )}
 
-            {/* Step 5 — Confirmation */}
-            {step === 5 && (
-              <div className="space-y-5 text-center fade-up" data-testid="step-5">
+            {/* Step 4 — Confirmation */}
+            {step === 4 && (
+              <div className="space-y-5 text-center fade-up" data-testid="step-4">
                 <div className="mx-auto h-16 w-16 rounded-full bg-emerald-100 grid place-items-center"><CheckCircle2 className="h-8 w-8 brand-emerald" /></div>
                 <h2 className="font-display text-3xl font-semibold text-slate-900">Order confirmed!</h2>
                 <p className="text-slate-600">Your reference is <span className="font-mono font-bold brand-emerald">{order?.reference}</span>. Our team will WhatsApp you within minutes to begin documentation.</p>
@@ -624,7 +658,7 @@ export default function Checkout() {
             )}
 
             {/* Nav buttons */}
-            {step < 4 && (
+            {step < 3 && (
               <div className="mt-8 flex items-center justify-between">
                 <Button onClick={back} disabled={step === 1} variant="outline" className="rounded-full px-5 h-11 border-slate-300" data-testid="step-back-btn">
                   <ChevronLeft className="h-4 w-4 mr-1" /> Back
@@ -634,7 +668,7 @@ export default function Checkout() {
                 </Button>
               </div>
             )}
-            {step === 4 && (
+            {step === 3 && (
               <div className="mt-6 flex items-center justify-between">
                 <Button onClick={back} variant="outline" className="rounded-full px-5 h-11 border-slate-300">
                   <ChevronLeft className="h-4 w-4 mr-1" /> Back

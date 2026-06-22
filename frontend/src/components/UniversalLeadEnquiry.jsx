@@ -42,7 +42,7 @@ export default function UniversalLeadEnquiry() {
         >
           <div
             data-testid="universal-lead-panel"
-            className="relative w-[min(440px,calc(100vw-2rem))] max-h-[calc(100vh-3rem)] overflow-y-auto rounded-3xl"
+            className="relative w-[min(440px,calc(100vw-2rem))] max-h-[calc(100vh-3rem)] rounded-3xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button

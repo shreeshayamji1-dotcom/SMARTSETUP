@@ -137,7 +137,7 @@ export default function CostCalculator() {
                 ))}
               </div>
               <div className="mt-5 p-4 rounded-xl bg-emerald-50 border border-emerald-900/10">
-                <div className="text-[11px] uppercase tracking-[0.22em] brand-emerald font-semibold">Reserve slot</div>
+                <div className="text-[11px] uppercase tracking-[0.22em] brand-emerald font-semibold">Pay deposit</div>
                 <div className="flex items-baseline gap-2"><div className="font-display text-2xl font-bold text-slate-900">AED 999</div><div className="text-xs text-slate-600">refundable pre-booking</div></div>
               </div>
               <Button data-testid="calc-reserve-btn" disabled={!zone || !!pricingError} onClick={() => navigate('/checkout', { state: { order: {
@@ -155,7 +155,7 @@ export default function CostCalculator() {
                 total_aed: breakdown.total,
                 contact: { name: '', email: '', phone: '' },
                 business: { activity: '', company_names: ['', '', ''], shareholders: 1 },
-              }}})} className="btn-primary rounded-full w-full h-12 mt-5">Reserve My Slot · AED 999 <ChevronRight className="h-4 w-4 ml-1" /></Button>
+              }}})} className="btn-primary rounded-full w-full h-12 mt-5">Get Started · AED {breakdown.total.toLocaleString()} <ChevronRight className="h-4 w-4 ml-1" /></Button>
               <Button onClick={() => navigate('/consultation')} variant="outline" className="rounded-full w-full h-11 mt-2 border-slate-300"><Phone className="h-4 w-4 mr-2" /> Talk to Advisor</Button>
             </div>
           </div>

@@ -11,6 +11,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: #FFFCF5;
     color: #1E293B;
+    transform: scale(0.82);
+    transform-origin: top left;
+    width: 122.%;
+    height: 122.%;
 }
 
 h1, h2, h3, h4, h5, h6, .font-display {

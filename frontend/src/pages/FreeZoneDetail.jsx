@@ -33,9 +33,15 @@ export default function FreeZoneDetail() {
       .filter((p) => (p.visa_count || 0) === n)
       .sort((a, b) => (a.base_price || 0) - (b.base_price || 0))[0];
   let popularPackages = [0, 1, 2].map(pickCheapestByVisa).filter(Boolean);
+  // For RAKEZ, ensure we show exactly 3 prices
+  if (zone.slug === 'rakez' && popularPackages.length < 3) {
+    const remaining = zonePackages.filter((p) => !popularPackages.some((pp) => (pp.package_id || pp.id) === (p.package_id || p.id)));
+    popularPackages = [...popularPackages, ...remaining.slice(0, 3 - popularPackages.length)];
+  }
   if (popularPackages.length === 0) popularPackages = zonePackages.slice(0, 3);
   const popularKeys = new Set(popularPackages.map((p) => String(p.package_id || p.id)));
   const extraPackages = zonePackages.filter((p) => !popularKeys.has(String(p.package_id || p.id)));
+  const otherZones = (ZONES || []).filter((z) => z.slug !== slug).slice(0, 4);
 
   useEffect(() => {
     let cancelled = false;
@@ -60,24 +66,32 @@ export default function FreeZoneDetail() {
     );
   }
 
-  const selectedGovernmentTotal = selectedPackage?.base_price || zone.gov;
-  const selectedServiceFee = selectedPackage?.service_fee || zone.svc || 0;
-  const total = selectedGovernmentTotal + selectedServiceFee;
-  const otherZones = mergeZonesWithLivePackages(ZONES, livePackages).filter((z) => z.slug !== slug).slice(0, 4);
+  const getPackageLabel = (pkg, z) => {
+    const visas = pkg.visa_count || 0;
+    if (z.slug === 'rakez') {
+      const workspace = (pkg.workspace || '').toLowerCase();
+      if (workspace.includes('virtual')) return `Virtual Desk · ${visas} Visa${visas === 1 ? '' : 's'}`;
+      if (workspace.includes('flexi')) return `Flexi Desk · ${visas} Visa${visas === 1 ? '' : 's'}`;
+      if (workspace.includes('warehouse') || workspace.includes('industrial')) return `Warehouse · ${visas} Visa${visas === 1 ? '' : 's'}`;
+    }
+    return `${visas === 0 ? 'Basic' : visas === 1 ? 'Growth' : 'Premium'} · ${visas} Visa${visas === 1 ? '' : 's'}`;
+  };
 
+  const selectedGovernmentTotal = Number(selectedPackage?.base_price || selectedPackage?.total_with_service || 0);
+  const selectedServiceFee = Number(selectedPackage?.service_fee || 0);
+  const total = selectedGovernmentTotal + selectedServiceFee;
+  const ctaLabel = 'Reserve your slot';
   const reserveSlot = () => navigate('/checkout', { state: { order: {
     zone_slug: zone.slug,
     zone_name: zone.name,
-    mode: zone.emirate ? 'freezone' : 'mainland',
-    visa_count: withVisa ? 1 : 0,
-    office_type: selectedPackage?.workspace || 'Virtual Desk',
-    addons: [],
     total_aed: total,
     package_id: selectedPackage?.package_id || selectedPackage?.id || null,
     package_name: selectedPackage?.package_name || zone.livePackage?.package_name || zone.name,
+    visa_count: selectedPackage?.visa_count || 0,
+    addons: [],
     contact: { name: '', email: '', phone: '' },
-    business: { activity: '', company_names: ['', '', ''], shareholders: 1 },
-  }}});
+    business: { activity: '', activities: [], company_names: ['', '', ''], shareholders: 1 },
+  } } });
 
   return (
     <div>
@@ -197,7 +211,7 @@ export default function FreeZoneDetail() {
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <div className="text-[10px] uppercase tracking-[0.22em] brand-bronze font-bold">{(pkg.visa_count || 0) === 0 ? 'Basic' : (pkg.visa_count || 0) === 1 ? 'Growth' : 'Premium'} · {pkg.visa_count || 0} Visa{(pkg.visa_count || 0) === 1 ? '' : 's'}</div>
+                        <div className="text-[10px] uppercase tracking-[0.22em] brand-bronze font-bold">{getPackageLabel(pkg, zone)}</div>
                         <div className="mt-1 font-display text-2xl font-semibold text-slate-900">{pkg.package_name}</div>
                         <div className="mt-1 text-sm text-slate-500">{pkg.workspace || 'Workspace as per authority package'} · {pkg.duration || '1 year'}</div>
                       </div>
@@ -234,7 +248,7 @@ export default function FreeZoneDetail() {
                 <div className="text-[10px] uppercase tracking-[0.22em] font-semibold brand-emerald">Selected total</div>
                 <div className="font-display text-6xl font-bold text-slate-900 mt-1">AED {total.toLocaleString()}</div>
                 <div className="text-sm text-slate-500 mt-1">{selectedPackage?.package_name || zone.name} · Year 1</div>
-                <Button data-testid="fz-reserve-btn" onClick={reserveSlot} className="btn-primary rounded-full mt-6 px-6 h-11">Reserve Slot · AED 999</Button>
+                <Button data-testid="fz-reserve-btn" onClick={reserveSlot} className="btn-primary rounded-full mt-6 px-6 h-11">{ctaLabel} · AED {total.toLocaleString()}</Button>
               </div>
               <div className="space-y-3">
                 {[

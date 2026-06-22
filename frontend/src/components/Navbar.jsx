@@ -56,10 +56,10 @@ const NAV = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [services, setServices] = useState(false);
+  const [openMenu, setOpenMenu] = useState('');
   const [acct, setAcct] = useState(false);
   const acctRef = useRef(null);
-  const svcRef = useRef(null);
+  const navRef = useRef(null);
   const { user, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -74,13 +74,13 @@ export default function Navbar() {
   useEffect(() => {
     const onClick = (e) => {
       if (acctRef.current && !acctRef.current.contains(e.target)) setAcct(false);
-      if (svcRef.current && !svcRef.current.contains(e.target)) setServices(false);
+      if (navRef.current && !navRef.current.contains(e.target)) setOpenMenu('');
     };
     document.addEventListener('mousedown', onClick);
     return () => document.removeEventListener('mousedown', onClick);
   }, []);
 
-  useEffect(() => { setOpen(false); setServices(false); setAcct(false); }, [location.pathname]);
+  useEffect(() => { setOpen(false); setOpenMenu(''); setAcct(false); }, [location.pathname]);
 
   const isActive = (href) => location.pathname === href;
 
@@ -98,14 +98,14 @@ export default function Navbar() {
           </Link>
 
           {/* CENTER: Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 flex-1 justify-center">
+          <nav ref={navRef} className="hidden lg:flex items-center gap-6 flex-1 justify-center">
             {NAV.map((n) =>
               n.children ? (
-                <div key={n.label} className="relative" ref={svcRef}>
-                  <button onClick={() => setServices((s) => !s)} className="text-sm font-medium text-slate-700 hover:text-slate-900 flex items-center gap-1 link-underline">
-                    {n.label} <ChevronDown className={`h-3.5 w-3.5 transition-transform ${services ? 'rotate-180' : ''}`} />
+                <div key={n.label} className="relative">
+                  <button onClick={() => setOpenMenu((menu) => (menu === n.label ? '' : n.label))} className="text-sm font-medium text-slate-700 hover:text-slate-900 flex items-center gap-1 link-underline">
+                    {n.label} <ChevronDown className={`h-3.5 w-3.5 transition-transform ${openMenu === n.label ? 'rotate-180' : ''}`} />
                   </button>
-                  {services && (
+                  {openMenu === n.label && (
                     <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 w-60 bg-white rounded-2xl shadow-2xl border border-emerald-900/10 p-2 fade-up">
                       {n.children.map((c) => (
                         <Link key={c.href} to={c.href} className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${isActive(c.href) ? 'bg-emerald-50 brand-emerald' : 'text-slate-700 hover:bg-emerald-50 hover:brand-emerald'}`}>{c.label}</Link>

@@ -1,0 +1,51 @@
+{
+  "summary": "Validated VS Code repair of FreeZoneDetail and Phase 6 activity limit in /checkout. CRITICAL: FreeZoneDetail.jsx still had an undefined `otherZones` reference (line 394) — page crashed for /free-zones/spc and /free-zones/rakez via ErrorBoundary 'We are currently updating this information'. Applied minimal fix (defined otherZones from ZONES). After the fix, both pages render with hero + 'Choose your package' section + fz-reserve-btn. HOWEVER live-package content from Supabase is incomplete: SPC loads only 1 package (expected 3 tiers Basic/Growth/Premium @ 5,760/13,175/15,000 NOT present), RAKEZ loads 0 packages (shows 'Pricing verification in progress' banner). Reserve button shows 'AED 0' because the auto-selected package's total is not being extracted properly (hero shows starting AED 5,750 but selectedGovernmentTotal+selectedServiceFee = 0). Phase 6 fully verified: counter increments, chips render, input disables at 3/3 with placeholder 'Limit of 3 reached', validation toast 'Add at least one business activity' blocks zero-activity progression, advancing creates order (SSU-20260622-9IIHB). Step-3 (Payment) regression PASSED: dual pay-choice-full/pay-choice-reserve cards (AED 4,888 / AED 999) + order ref visible.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "FreeZoneDetail.jsx", "issue": "ReferenceError: otherZones is not defined at line 394 — page crashes via ErrorBoundary for /free-zones/spc and /free-zones/rakez. Main agent's VS Code repair missed reintroducing this variable. Testing agent applied a minimal fix (otherZones = ZONES.filter(z=>z.slug!==slug).slice(0,4)) so the page renders, but main agent should review whether this matches the original intent (e.g., should it use mergeZonesWithLivePackages-enriched zones instead?).", "selector": "/free-zones/spc, /free-zones/rakez", "priority": "CRITICAL"},
+      {"component": "FreeZoneDetail.jsx hero + reserve CTA", "issue": "fz-reserve-btn shows 'Reserve your slot · AED 0' on both SPC and RAKEZ. selectedPackage exists but selectedGovernmentTotal = Number(selectedPackage?.base_price || selectedPackage?.total_with_service || 0) resolves to 0. Hero card meanwhile shows 'FROM AED 5,750'. Likely cause: selectedPackage falls back to zone.livePackage which lacks base_price/service_fee fields, or default selectedPackageId='' picks zonePackages[0] whose base_price field name differs.", "selector": "data-testid=fz-reserve-btn", "priority": "HIGH"},
+      {"component": "FreeZoneDetail.jsx — SPC package list", "issue": "SPC only shows 1 live package; expected 3 popular tiers Basic (AED 5,760, 0 visa) / Growth (AED 13,175, 1 visa) / Premium (AED 15,000, 2 visas). Body text contains '1 Visa' and '2 Visas' substrings but tier names 'Basic'/'Growth'/'Premium' and target prices 5,760 / 13,175 / 15,000 NOT present. Banner 'Pricing verification in progress for this jurisdiction…' is rendered, which suggests zonePackages.length===0 OR the pickCheapestByVisa(0/1/2) filter dropped everything.", "selector": "/free-zones/spc", "priority": "HIGH"},
+      {"component": "FreeZoneDetail.jsx — RAKEZ package list", "issue": "RAKEZ shows 0 live packages, no hero summary (no FROM AED, no LIVE PACKAGES count), only 'Pricing verification in progress' banner. fz-package-card count = 0.", "selector": "/free-zones/rakez", "priority": "HIGH"}
+    ],
+    "integration_issues": [
+      {"flow": "FreeZone → Checkout handoff (order summary)", "issue": "Clicking fz-reserve-btn on /free-zones/spc navigates to /checkout successfully and Trade Licence line is shown, but the line label reads 'ANCFZ — Trade Licence (Y…)' not 'SPC Free Zone — Trade Licence'. The state.order.zone_name passed to Checkout is 'SPC Free Zone' but Checkout's currentZone lookup is resolving to ANCFZ. This is a state-rehydration/zone-resolution mismatch in Checkout.jsx.", "affected_selectors": ["/checkout order-summary", "currentZone resolution"]}
+    ],
+    "design_issues": []
+  },
+  "verified_passing": [
+    "FreeZoneDetail SPC after testing-agent fix: page renders hero + 'Choose your package' section + fz-reserve-btn (data-testid present)",
+    "FreeZoneDetail RAKEZ after testing-agent fix: page renders + fz-reserve-btn present",
+    "Reserve handoff: clicking fz-reserve-btn navigates to /checkout (state.order passed)",
+    "Phase 6 (a): adding activities via business-activity input + activity-suggestion-* creates chips in selected-activities and increments activity-counter (0→1→2→3)",
+    "Phase 6 (b): at 3/3 activities, business-activity input becomes disabled=true and placeholder switches to 'Limit of 3 reached'",
+    "Phase 6 (c): proceeding from step 2 (Details) with zero activities shows toast 'Add at least one business activity' — advance blocked",
+    "Phase 6 (d): with 1+ activity, Continue advances to Payment step and creates order (observed: SSU-20260622-9IIHB)",
+    "Phase 6 dedup: addActivity correctly filters duplicates via list.includes(name) check",
+    "Phase 6 remove: remove-activity-* button removes the chip and re-enables the input",
+    "Regression — Step 3 Payment: dual pay-choice-full (AED 4,888) and pay-choice-reserve (AED 999) cards present, order ref visible at top and bottom of card"
+  ],
+  "test_report_links": [],
+  "action_items": [
+    "CRITICAL: Properly restore otherZones in FreeZoneDetail.jsx. Testing agent added `otherZones = ZONES.filter(z=>z.slug!==slug).slice(0,4)` at ~line 44 as a quick fix — confirm this matches original intent or replace with mergeZonesWithLivePackages-derived list.",
+    "HIGH: Fix fz-reserve-btn 'AED 0' — selectedGovernmentTotal/selectedServiceFee must extract from whichever field the live package uses (display_price/promotion_price/package_price etc., consistent with pricingService.normalizePackage). Currently relies on base_price which may not be populated for the fallback selectedPackage.",
+    "HIGH: Investigate why SPC returns only 1 live package and RAKEZ returns 0. Either the Supabase data is incomplete or getZonePackages/pickCheapestByVisa filter (is_active!==false && base_price>0 in pricingService.pickPrimaryPackage; getZonePackages requires base_price>0 via sort) is rejecting valid rows. Verify slug matching in getZonePackages (zone.slug vs row.freezone case).",
+    "HIGH: Checkout order summary shows 'ANCFZ' instead of 'SPC Free Zone' after handoff from /free-zones/spc. Verify Checkout.jsx currentZone lookup uses state.order.zone_slug, not a default."
+  ],
+  "critical_code_review_comments": [
+    "FreeZoneDetail.jsx line 394 references `otherZones` with no preceding declaration — this is the exact same class of regression that broke the file before (undeclared variable from incomplete reconstruction).",
+    "Checkout.jsx is now 722 lines — consider splitting Step 3 (Payment) and Step 2 (Details + Activities) into separate components for maintainability (already noted in iteration_3).",
+    "pricingService.getZonePackages requires base_price > 0 inside .sort but earlier .filter only checks slug match — if base_price is 0 for valid packages (because field is named display_price/package_price etc.), they'll be ordered last but still kept; cross-check normalizePackage field-pickorder vs DB column names.",
+    "FreeZoneDetail.jsx — selectedPackage default falls through to `zone.livePackage` which may lack service_fee / base_price normalization; result is total=0 in the CTA. Recommend normalizing zone.livePackage via the same normalizePackage helper before consumption."
+  ],
+  "updated_files": [
+    "/app/frontend/src/pages/FreeZoneDetail.jsx (added: const otherZones = (ZONES || []).filter((z) => z.slug !== slug).slice(0, 4);  — to unblock page render)"
+  ],
+  "success_rate": {"backend": "N/A (frontend-only)", "frontend": "Phase 6: 100% pass; FreeZoneDetail repair: PARTIAL (renders only after agent-side patch; package data + AED total still broken)"},
+  "test_credentials": "Guest checkout (Test User / test@example.com / 501234567); no auth needed",
+  "seed_data_creation": "Created one checkout order during validation: SSU-20260622-9IIHB",
+  "retest_needed": true,
+  "main_agent_can_self_test": false,
+  "context_for_next_testing_agent": "Iteration 4 left these states: (1) FreeZoneDetail.jsx has a testing-agent quick-fix adding `otherZones` near line 44 — main agent should review/replace. (2) Phase 6 (Checkout step-2 multi-activity) fully works end-to-end on dummy Supabase data. (3) Open bugs: SPC shows 1 live package (expected 3 Basic/Growth/Premium), RAKEZ shows 0; fz-reserve-btn shows AED 0; checkout order summary shows ANCFZ instead of SPC after handoff. localStorage key 'ssu_scratch_seen'='1' suppresses the scratch dialog during tests. Use data-testid selectors: fz-reserve-btn, business-activity, activity-counter, activity-suggestion-*, selected-activities, remove-activity-*, pay-choice-full, pay-choice-reserve, step-next-btn.",
+  "rca of the issue": "Bug 1 (CRITICAL — page crash): During VS Code edit, the `otherZones` local variable definition was removed but the JSX usage at line 394 remained. ReferenceError thrown during render → ErrorBoundary swallows it → 'We are currently updating this information' shown. Fix: declare otherZones before render. Bug 2 (HIGH — AED 0 in Reserve btn): selectedPackage resolution flow `zonePackages.find(...) || zone.livePackage || zonePackages[0]`. When selectedPackageId is '' and zonePackages[0] exists but its base_price field is named differently (e.g., display_price/package_price as per pricingService.normalizePackage), the `Number(selectedPackage?.base_price || selectedPackage?.total_with_service || 0)` evaluates to 0. The hero meanwhile reads zone.gov fallback so it still shows AED 5,750. Bug 3/4 (HIGH — missing packages): suspect either incomplete Supabase seeding for SPC/RAKEZ or a case-sensitivity / slug-mismatch in getZonePackages filtering rows by zone.slug. Bug 5 (integration): Checkout's currentZone resolution likely falls back to a default (ANCFZ) instead of honoring state.order.zone_slug='spc'."
+}
