@@ -30,10 +30,23 @@ function authToken() { const token = localStorage.getItem('ssu_token'); if (!tok
 
 function buildOrderPayload(draft, totalAed, user) { const reference = buildOrderReference(); const contact = draft.contact || {}; const business = draft.business || {}; const token = authToken(); const couponCode = draft.coupon_code || localStorage.getItem('ssu_scratch_coupon_code') || null; const addonsTotal = (draft.addons || []).reduce((sum, a) => sum + money(a.price, 0), 0); const finalTotal = money(totalAed, 0); const basePrice = Math.max(finalTotal - addonsTotal, 0); const noteParts = [`Ref: ${reference}`, business.activity ? `Activity: ${business.activity}` : null, (business.company_names || []).filter(Boolean).length ? `Company names: ${(business.company_names || []).filter(Boolean).join(', ')}` : null, draft.office_type ? `Office: ${draft.office_type}` : null].filter(Boolean); return { token, id: newUuid(), reference, user_id: user?.id || null, coupon_code: couponCode, customer_name: contact.name || null, customer_email: contact.email || null, customer_phone: contact.phone ? `${contact.phone_code || ''} ${contact.phone}`.trim() : null, freezone: draft.zone_name || draft.zone_slug || 'Free Zone', package_id: draft.package_id || null, package_name: draft.package_name || draft.zone_name || null, duration_years: money(draft.duration_years, 1), visa_count: money(draft.visa_count, 0), shareholder_count: money(business.shareholders, 1), base_price: basePrice, addons_total: addonsTotal, discount_total: 0, final_total: finalTotal, currency: 'AED', status: 'draft', notes: noteParts.join(' | ') || null }; }
 async function recalculateOrder(orderId, token) { return supabaseRest.rpc('recalculate_checkout_order', { p_order_id: orderId }, token); }
+async function reconcileCouponCode(code, userId, token) {
+  const normalized = String(code || '').trim().toUpperCase();
+  if (!normalized) return null;
+  try {
+    const result = await supabaseRest.rpc('validate_checkout_coupon', { p_code: normalized, p_user_id: userId, p_base: 0, p_addons: 0 }, token);
+    const row = Array.isArray(result) ? result[0] : result;
+    return row?.valid === true ? normalized : null;
+  } catch (_error) {
+    // Coupon validation must never make an otherwise valid order fail; the financial RPC remains authoritative.
+    return null;
+  }
+}
 
 export async function createCheckoutOrder(draft, totalAed, user) {
   if (!user?.id) throw new Error('Please sign in before starting an application.');
   const orderPayload = buildOrderPayload(draft, totalAed, user); const { reference, token, ...orderRow } = orderPayload;
+  orderRow.coupon_code = await reconcileCouponCode(orderRow.coupon_code, user.id, token);
   await supabaseRest.insert('checkout_orders', [orderRow], token, 'return=minimal');
   const orderId = orderRow.id;
   for (const addon of draft.addons || []) {
@@ -43,7 +56,16 @@ export async function createCheckoutOrder(draft, totalAed, user) {
   return { id: orderId, reference, ...orderRow, ...(authoritative ? { final_total: authoritative.final_total ?? authoritative.grand_total, discount_total: authoritative.discount_total, addons_total: authoritative.addons_total ?? authoritative.addon_total, base_price: authoritative.base_price } : {}) };
 }
 
-export async function markBankTransferSubmitted(order, bankProof) { const token = authToken(); const noteSuffix = ['Bank transfer proof submitted', bankProof.payment_choice === 'full' ? 'FULL PAYMENT' : `RESERVE SLOT (AED ${Number(getPrebookingAmount()).toLocaleString()})`, bankProof.amount_aed ? `Amount: AED ${Number(bankProof.amount_aed).toLocaleString()}` : null, bankProof.reference ? `Ref: ${bankProof.reference}` : null, bankProof.payer_name ? `Payer: ${bankProof.payer_name}` : null, bankProof.file_name ? `File: ${bankProof.file_name}` : null].filter(Boolean).join(' | '); return supabaseRest.rpc('submit_bank_transfer_proof', { p_order_id: order.id, p_note: noteSuffix }, token); }
+export async function markBankTransferSubmitted(order, bankProof) {
+  const token = authToken();
+  const noteSuffix = ['Bank transfer proof submitted', bankProof.payment_choice === 'full' ? 'FULL PAYMENT' : `RESERVE SLOT (AED ${Number(getPrebookingAmount()).toLocaleString()})`, bankProof.amount_aed ? `Amount: AED ${Number(bankProof.amount_aed).toLocaleString()}` : null, bankProof.reference ? `Ref: ${bankProof.reference}` : null, bankProof.payer_name ? `Payer: ${bankProof.payer_name}` : null, bankProof.file_name ? `File: ${bankProof.file_name}` : null].filter(Boolean).join(' | ');
+  const result = await supabaseRest.rpc('submit_bank_transfer_proof', { p_order_id: order.id, p_note: noteSuffix }, token);
+  if (typeof window !== 'undefined') {
+    const reference = encodeURIComponent(order?.reference || order?.id || 'your-order');
+    window.location.assign(`/checkout/success?bank=true&reference=${reference}`);
+  }
+  return result;
+}
 export function getPrebookingAmount() { return PREBOOKING_AMOUNT_AED; }
 // Legacy UI compatibility only. Package base_price is the authoritative published package amount;
 // visa pricing must never be independently added in the browser.
