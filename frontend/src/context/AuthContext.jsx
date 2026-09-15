@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { postgrestValue, supabaseRest } from '../lib/supabaseRest';
 
 const AuthContext = createContext(null);
+const CLIENT_ROLE = 'client';
 
 function normalizeUser(authUser, profile) {
   return {
@@ -9,39 +10,28 @@ function normalizeUser(authUser, profile) {
     email: authUser?.email,
     name: profile?.full_name || profile?.name || authUser?.user_metadata?.full_name || authUser?.email?.split('@')[0] || 'Client',
     phone: profile?.phone || authUser?.phone || authUser?.user_metadata?.phone || '',
-    role: profile?.role || 'client',
+    role: profile?.role || CLIENT_ROLE,
     is_active: profile?.is_active !== false,
   };
 }
 
 async function loadProfile(authUser, token) {
-  // Your current Supabase already uses public.profiles with role app_role.
-  // Keep admin_profiles/client_profiles fallback for older builds.
-  const existingProfile = await supabaseRest.select('profiles', `?select=*&or=(id.eq.${postgrestValue(authUser.id)},email.eq.${postgrestValue(authUser.email || '')})&limit=1`, token).catch(() => []);
+  const existingProfile = await supabaseRest.select('profiles', `?select=id,email,full_name,role,assigned_manager&or=(id.eq.${postgrestValue(authUser.id)},email.eq.${postgrestValue(authUser.email || '')})&limit=1`, token).catch(() => []);
   if (existingProfile?.[0]) return normalizeUser(authUser, existingProfile[0]);
 
   const admin = await supabaseRest.select('admin_profiles', `?select=*&user_id=eq.${postgrestValue(authUser.id)}&is_active=eq.true&limit=1`, token).catch(() => []);
   if (admin?.[0]) return normalizeUser(authUser, admin[0]);
-
-  const client = await supabaseRest.select('client_profiles', `?select=*&user_id=eq.${postgrestValue(authUser.id)}&limit=1`, token).catch(() => []);
-  if (client?.[0]) return normalizeUser(authUser, client[0]);
 
   const fallbackName = authUser?.user_metadata?.full_name || authUser?.email?.split('@')[0] || 'Client';
   const [createdProfile] = await supabaseRest.insert('profiles', [{
     id: authUser.id,
     email: authUser.email,
     full_name: fallbackName,
-    role: 'client',
+    role: CLIENT_ROLE,
   }], token).catch(() => [null]);
   if (createdProfile) return normalizeUser(authUser, createdProfile);
 
-  const [createdClient] = await supabaseRest.insert('client_profiles', [{
-    user_id: authUser.id,
-    email: authUser.email,
-    full_name: fallbackName,
-    phone: authUser?.user_metadata?.phone || null,
-  }], token).catch(() => [null]);
-  return normalizeUser(authUser, createdClient);
+  return normalizeUser(authUser, { id: authUser.id, email: authUser.email, full_name: fallbackName, role: CLIENT_ROLE });
 }
 
 export function AuthProvider({ children }) {
@@ -96,20 +86,14 @@ export function AuthProvider({ children }) {
       });
       const token = data.access_token;
       if (token && data.user) {
-        const [profile] = await supabaseRest.insert('profiles', [{
-          id: data.user.id,
-          email,
-          full_name,
-          role: 'client',
-        }], token).catch(() => [null]);
-        const profileUser = normalizeUser(data.user, profile);
+        const profileUser = await loadProfile(data.user, token);
         localStorage.setItem('ssu_token', token);
         localStorage.setItem('ssu_refresh_token', data.refresh_token || '');
         localStorage.setItem('ssu_user', JSON.stringify(profileUser));
         setUser(profileUser);
         return { ok: true, user: profileUser };
       }
-      return { ok: true, user: { email, name: full_name, role: 'client' } };
+      return { ok: true, user: { email, name: full_name, role: CLIENT_ROLE } };
     } catch (e) {
       return { ok: false, error: e.message || 'Registration failed' };
     }
