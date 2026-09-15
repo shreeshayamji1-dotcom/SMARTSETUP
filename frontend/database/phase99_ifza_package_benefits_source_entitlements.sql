@@ -1,0 +1,9 @@
+-- IFZA May 2026 source entitlements. These are benefits/waivers, not invented AED charges.
+insert into public.package_benefits(package_id,benefit,sort_order,is_active)
+select p.id,'IFZA May 2026: +1 Residence Visa FREE For Life entitlement, subject to source terms and continual renewal conditions.',10,true from public.freezone_packages p where p.freezone='IFZA' and p.is_active=true and p.duration_years>1 and not exists (select 1 from public.package_benefits b where b.package_id=p.id and b.benefit like 'IFZA May 2026: +1 Residence Visa FREE For Life%');
+insert into public.package_benefits(package_id,benefit,sort_order,is_active)
+select p.id,'IFZA May 2026: 1-year FREE FLEXIDESK promotion for new licenses with 0–3 visa allocations, subject to booking and source terms.',20,true from public.freezone_packages p where p.freezone='IFZA' and p.is_active=true and p.visa_count between 0 and 3 and not exists (select 1 from public.package_benefits b where b.package_id=p.id and b.benefit like 'IFZA May 2026: 1-year FREE FLEXIDESK%');
+insert into public.package_benefits(package_id,benefit,sort_order,is_active)
+select p.id,'IFZA May 2026: General Trading activity fee waived for new applications and next three renewals (4 years), subject to source terms.',30,true from public.freezone_packages p where p.freezone='IFZA' and p.is_active=true and not exists (select 1 from public.package_benefits b where b.package_id=p.id and b.benefit like 'IFZA May 2026: General Trading activity fee waived%');
+insert into public.package_benefits(package_id,benefit,sort_order,is_active)
+select p.id,'IFZA May 2026: Cross Business Activity Fee waived for new applications and next three renewals (4 years), subject to source terms.',31,true from public.freezone_packages p where p.freezone='IFZA' and p.is_active=true and not exists (select 1 from public.package_benefits b where b.package_id=p.id and b.benefit like 'IFZA May 2026: Cross Business Activity Fee waived%');
