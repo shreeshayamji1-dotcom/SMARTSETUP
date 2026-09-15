@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone, ShieldCheck, Linkedin, Instagram, Twitter, Facebook } from 'lucide-react';
+import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { COMPANY_INFO } from '../data/zones';
 
 export default function Footer() {
@@ -19,12 +19,13 @@ export default function Footer() {
             <p className="mt-5 text-sm text-[#A9C0BB] leading-relaxed max-w-md">
               Operated by <span className="text-[#F0C674] font-semibold">{COMPANY_INFO.legalName}</span>. SmartSetupUAE.ae is a private consultancy and not a government body. Founder: {COMPANY_INFO.founder}.
             </p>
-            <div className="mt-5 flex items-center gap-3">
-              {[Linkedin, Instagram, Twitter, Facebook].map((Icon, i) => (
-                <a key={i} href="#" className="h-9 w-9 rounded-full grid place-items-center border border-white/15 hover:border-[#F0C674] hover:text-[#F0C674] transition-colors">
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+            <div className="mt-5 flex flex-wrap items-center gap-2 text-xs">
+              <a href={`mailto:${COMPANY_INFO.email}`} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-2 hover:border-[#F0C674] hover:text-[#F0C674] transition-colors">
+                <Mail className="h-3.5 w-3.5" /> Email us
+              </a>
+              <a href={`tel:${String(COMPANY_INFO.phone || '').replace(/[^+\d]/g, '')}`} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-2 hover:border-[#F0C674] hover:text-[#F0C674] transition-colors">
+                <Phone className="h-3.5 w-3.5" /> Call us
+              </a>
             </div>
           </div>
 
@@ -60,7 +61,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Google Map for company address */}
         <div className="mt-12 rounded-2xl overflow-hidden border border-white/10 bg-white/5" data-testid="footer-map">
           <div className="px-5 pt-5 pb-3 flex items-center gap-2">
             <MapPin className="h-4 w-4 text-[#F0C674]" />
