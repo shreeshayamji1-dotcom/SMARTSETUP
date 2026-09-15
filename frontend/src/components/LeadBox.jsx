@@ -8,10 +8,7 @@ import { useToast } from '../hooks/use-toast';
 import { captureLead } from '../lib/supabaseRest';
 
 export default function LeadBox({ sourcePage = 'home', freezoneName = '', compact = false }) {
-  const [data, setData] = useState({
-    name: '', code: '+971', phone: '', activity: '',
-    visas: '1 Visa', budget: 'Any Budget', office: 'Virtual Desk',
-  });
+  const [data, setData] = useState({ name: '', code: '+971', phone: '', activity: '', visas: '1 Visa', budget: 'Any Budget', office: 'Virtual Desk' });
   const [done, setDone] = useState(false);
   const [busy, setBusy] = useState(false);
   const { toast } = useToast();
@@ -37,15 +34,13 @@ export default function LeadBox({ sourcePage = 'home', freezoneName = '', compac
     setBusy(true);
     try {
       await captureLead(payload);
-    } catch {
-      // Fallback: cache locally so we don't lose the lead
-      const leads = JSON.parse(localStorage.getItem('ssu_leads') || '[]');
-      leads.push({ ...payload, created_at: new Date().toISOString(), status: 'pending_sync' });
-      localStorage.setItem('ssu_leads', JSON.stringify(leads));
+      setDone(true);
+      toast({ title: 'Enquiry received', description: 'Our WhatsApp Agent will reach out within minutes.' });
+    } catch (error) {
+      toast({ title: 'Could not send enquiry', description: error?.message || 'Please try again.' });
+    } finally {
+      setBusy(false);
     }
-    setBusy(false);
-    setDone(true);
-    toast({ title: 'Enquiry received', description: 'Our WhatsApp Agent will reach out within minutes.' });
   };
 
   if (done) {
@@ -61,59 +56,14 @@ export default function LeadBox({ sourcePage = 'home', freezoneName = '', compac
 
   return (
     <form onSubmit={submit} className="card-elevated rounded-2xl p-6" data-testid="lead-box-form">
-      <div className="flex items-center gap-2">
-        <MessageSquareText className="h-4 w-4 brand-emerald" />
-        <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-500">Universal Lead Enquiry</div>
-      </div>
+      <div className="flex items-center gap-2"><MessageSquareText className="h-4 w-4 brand-emerald" /><div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-500">Universal Lead Enquiry</div></div>
       <h3 className="font-display text-xl font-semibold text-slate-900 mt-1">Free shortlist in minutes</h3>
       <div className="mt-4 space-y-3">
-        <div>
-          <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Full Name *</label>
-          <Input data-testid="lead-name-input" value={data.name} onChange={(e) => upd('name', e.target.value)} placeholder="Your full name" className="mt-1 h-10 rounded-lg" />
-        </div>
-        <div>
-          <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Phone / WhatsApp *</label>
-          <div className="mt-1 flex gap-2">
-            <Select value={data.code} onValueChange={(v) => upd('code', v)}>
-              <SelectTrigger className="w-[100px] h-10 rounded-lg"><SelectValue /></SelectTrigger>
-              <SelectContent>
-                {COUNTRY_CODES.map((c) => (<SelectItem key={c.label} value={c.code}>{c.label}</SelectItem>))}
-              </SelectContent>
-            </Select>
-            <Input data-testid="lead-phone-input" value={data.phone} onChange={(e) => upd('phone', e.target.value.replace(/[^0-9]/g, '').slice(0, 12))} placeholder="Mobile number" className="h-10 rounded-lg" />
-          </div>
-        </div>
-        {!compact && (
-          <div>
-            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Business Activity</label>
-            <Input value={data.activity} onChange={(e) => upd('activity', e.target.value)} placeholder="e.g., E-Commerce" className="mt-1 h-10 rounded-lg" />
-          </div>
-        )}
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Visa Required</label>
-            <Select value={data.visas} onValueChange={(v) => upd('visas', v)}>
-              <SelectTrigger className="mt-1 h-10 rounded-lg"><SelectValue /></SelectTrigger>
-              <SelectContent>{VISA_OPTIONS.map((v) => (<SelectItem key={v} value={v}>{v}</SelectItem>))}</SelectContent>
-            </Select>
-          </div>
-          <div>
-            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Setup Budget</label>
-            <Select value={data.budget} onValueChange={(v) => upd('budget', v)}>
-              <SelectTrigger className="mt-1 h-10 rounded-lg"><SelectValue /></SelectTrigger>
-              <SelectContent>{BUDGETS.map((b) => (<SelectItem key={b} value={b}>{b}</SelectItem>))}</SelectContent>
-            </Select>
-          </div>
-        </div>
-        {!compact && (
-          <div>
-            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Office Requirement</label>
-            <Select value={data.office} onValueChange={(v) => upd('office', v)}>
-              <SelectTrigger className="mt-1 h-10 rounded-lg"><SelectValue /></SelectTrigger>
-              <SelectContent>{OFFICE_TYPES.map((o) => (<SelectItem key={o} value={o}>{o}</SelectItem>))}</SelectContent>
-            </Select>
-          </div>
-        )}
+        <div><label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Full Name *</label><Input data-testid="lead-name-input" value={data.name} onChange={(e) => upd('name', e.target.value)} placeholder="Your full name" className="mt-1 h-10 rounded-lg" /></div>
+        <div><label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Phone / WhatsApp *</label><div className="mt-1 flex gap-2"><Select value={data.code} onValueChange={(v) => upd('code', v)}><SelectTrigger className="w-[100px] h-10 rounded-lg"><SelectValue /></SelectTrigger><SelectContent>{COUNTRY_CODES.map((c) => <SelectItem key={c.label} value={c.code}>{c.label}</SelectItem>)}</SelectContent></Select><Input data-testid="lead-phone-input" value={data.phone} onChange={(e) => upd('phone', e.target.value.replace(/[^0-9]/g, '').slice(0, 12))} placeholder="Mobile number" className="h-10 rounded-lg" /></div></div>
+        {!compact && <div><label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Business Activity</label><Input value={data.activity} onChange={(e) => upd('activity', e.target.value)} placeholder="e.g., E-Commerce" className="mt-1 h-10 rounded-lg" /></div>}
+        <div className="grid grid-cols-2 gap-3"><div><label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Visa Required</label><Select value={data.visas} onValueChange={(v) => upd('visas', v)}><SelectTrigger className="mt-1 h-10 rounded-lg"><SelectValue /></SelectTrigger><SelectContent>{VISA_OPTIONS.map((v) => <SelectItem key={v} value={v}>{v}</SelectItem>)}</SelectContent></Select></div><div><label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Setup Budget</label><Select value={data.budget} onValueChange={(v) => upd('budget', v)}><SelectTrigger className="mt-1 h-10 rounded-lg"><SelectValue /></SelectTrigger><SelectContent>{BUDGETS.map((b) => <SelectItem key={b} value={b}>{b}</SelectItem>)}</SelectContent></Select></div></div>
+        {!compact && <div><label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Office Requirement</label><Select value={data.office} onValueChange={(v) => upd('office', v)}><SelectTrigger className="mt-1 h-10 rounded-lg"><SelectValue /></SelectTrigger><SelectContent>{OFFICE_TYPES.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent></Select></div>}
         <Button type="submit" disabled={busy} data-testid="lead-submit-btn" className="btn-primary rounded-full w-full h-11">{busy ? 'Sending…' : 'Send to WhatsApp Agent'}</Button>
         <div className="text-[10px] text-slate-500 text-center">Replies within minutes · No spam · Zero sales pressure</div>
       </div>
