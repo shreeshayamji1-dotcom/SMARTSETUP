@@ -1,7 +1,6 @@
 import { supabaseRest } from './supabaseRest';
 
 const PREBOOKING_AMOUNT_AED = 999;
-const VISA_PRICE_AED = 5912;
 const DEFAULT_SERVICE_FEE_AED = 0;
 
 function slugify(value = '') { return String(value).toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
@@ -44,7 +43,9 @@ export async function createCheckoutOrder(draft, totalAed, user) {
   return { id: orderId, reference, ...orderRow, ...(authoritative ? { final_total: authoritative.final_total ?? authoritative.grand_total, discount_total: authoritative.discount_total, addons_total: authoritative.addons_total ?? authoritative.addon_total, base_price: authoritative.base_price } : {}) };
 }
 
-export async function markBankTransferSubmitted(order, bankProof) { const token = authToken(); const noteSuffix = ['Bank transfer proof submitted', bankProof.payment_choice === 'full' ? 'FULL PAYMENT' : 'RESERVE SLOT (AED 999)', bankProof.amount_aed ? `Amount: AED ${Number(bankProof.amount_aed).toLocaleString()}` : null, bankProof.reference ? `Ref: ${bankProof.reference}` : null, bankProof.payer_name ? `Payer: ${bankProof.payer_name}` : null, bankProof.file_name ? `File: ${bankProof.file_name}` : null].filter(Boolean).join(' | '); return supabaseRest.rpc('submit_bank_transfer_proof', { p_order_id: order.id, p_note: noteSuffix }, token); }
+export async function markBankTransferSubmitted(order, bankProof) { const token = authToken(); const noteSuffix = ['Bank transfer proof submitted', bankProof.payment_choice === 'full' ? 'FULL PAYMENT' : `RESERVE SLOT (AED ${Number(getPrebookingAmount()).toLocaleString()})`, bankProof.amount_aed ? `Amount: AED ${Number(bankProof.amount_aed).toLocaleString()}` : null, bankProof.reference ? `Ref: ${bankProof.reference}` : null, bankProof.payer_name ? `Payer: ${bankProof.payer_name}` : null, bankProof.file_name ? `File: ${bankProof.file_name}` : null].filter(Boolean).join(' | '); return supabaseRest.rpc('submit_bank_transfer_proof', { p_order_id: order.id, p_note: noteSuffix }, token); }
 export function getPrebookingAmount() { return PREBOOKING_AMOUNT_AED; }
-export function getVisaPrice() { return VISA_PRICE_AED; }
+// Legacy UI compatibility only. Package base_price is the authoritative published package amount;
+// visa pricing must never be independently added in the browser.
+export function getVisaPrice() { return 0; }
 export function getDefaultServiceFee() { return DEFAULT_SERVICE_FEE_AED; }
