@@ -32,6 +32,7 @@ const Login = lazy(() => import('./pages/Login'));
 const AuthCallback = lazy(() => import('./pages/AuthCallback'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const AdminPanel = lazy(() => import('./pages/AdminPanel'));
+const AgentCommissionAdmin = lazy(() => import('./pages/AgentCommissionAdmin'));
 const Activities = lazy(() => import('./pages/Activities'));
 
 function useRevealOnScroll() {
@@ -145,35 +146,36 @@ function App() {
             <ErrorBoundary>
               <Suspense fallback={<PageLoader />}>
                 <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/free-zones" element={<FreeZones />} />
-                <Route path="/free-zones/:slug" element={<FreeZoneDetail />} />
-                <Route path="/mainland" element={<Mainland />} />
-                <Route path="/mainland-vs-freezone" element={<MainlandVsFreeZone />} />
-                <Route path="/visa-services" element={<VisaServices />} />
-                <Route path="/golden-visa" element={<GoldenVisa />} />
-                <Route path="/calculator" element={<CostCalculator />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/checkout/success" element={<CheckoutSuccess />} />
-                <Route path="/ai-search" element={<AISearchPage />} />
-                <Route path="/compare" element={<Compare />} />
-                <Route path="/services/:slug" element={<ServicePage />} />
-                <Route path="/faqs" element={<FAQs />} />
-                <Route path="/founder-club" element={<FounderClub />} />
-                <Route path="/activities" element={<Activities />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/consultation" element={<Consultation />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/auth/callback" element={<AuthCallback />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/admin" element={<AdminPanel />} />
-                <Route path="/privacy" element={<Privacy />} />
-                <Route path="/terms" element={<Terms />} />
-                <Route path="/refund" element={<Refund />} />
-                <Route path="/data-deletion" element={<DataDeletion />} />
-              </Routes>
-            </Suspense>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/free-zones" element={<FreeZones />} />
+                  <Route path="/free-zones/:slug" element={<FreeZoneDetail />} />
+                  <Route path="/mainland" element={<Mainland />} />
+                  <Route path="/mainland-vs-freezone" element={<MainlandVsFreeZone />} />
+                  <Route path="/visa-services" element={<VisaServices />} />
+                  <Route path="/golden-visa" element={<GoldenVisa />} />
+                  <Route path="/calculator" element={<CostCalculator />} />
+                  <Route path="/checkout" element={<Checkout />} />
+                  <Route path="/checkout/success" element={<CheckoutSuccess />} />
+                  <Route path="/ai-search" element={<AISearchPage />} />
+                  <Route path="/compare" element={<Compare />} />
+                  <Route path="/services/:slug" element={<ServicePage />} />
+                  <Route path="/faqs" element={<FAQs />} />
+                  <Route path="/founder-club" element={<FounderClub />} />
+                  <Route path="/activities" element={<Activities />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/consultation" element={<Consultation />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/auth/callback" element={<AuthCallback />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/admin" element={<AdminPanel />} />
+                  <Route path="/admin/commission" element={<AgentCommissionAdmin />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/refund" element={<Refund />} />
+                  <Route path="/data-deletion" element={<DataDeletion />} />
+                </Routes>
+              </Suspense>
             </ErrorBoundary>
             <WhatsAppFloat />
             <ChatBot />
