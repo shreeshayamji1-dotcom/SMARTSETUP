@@ -33,7 +33,7 @@ const AuthCallback = lazy(() => import('./pages/AuthCallback'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const AdminPanel = lazy(() => import('./pages/AdminPanel'));
 const AgentCommissionAdmin = lazy(() => import('./pages/AgentCommissionAdmin'));
-const FreeZoneCommercialAdmin = lazy(() => import('./pages/FreeZoneCommercialAdmin'));
+const FreeZoneCommercialAdminV2 = lazy(() => import('./pages/FreeZoneCommercialAdminV2'));
 const Activities = lazy(() => import('./pages/Activities'));
 
 function useRevealOnScroll() {
@@ -45,7 +45,10 @@ function useRevealOnScroll() {
       if (!elements.length) return;
       observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
         });
       }, { threshold: 0.1, rootMargin: '80px 0px' });
       elements.forEach((element) => observer.observe(element));
@@ -108,7 +111,7 @@ function App() {
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/admin" element={<AdminPanel />} />
     <Route path="/admin/commission" element={<AgentCommissionAdmin />} />
-    <Route path="/admin/freezone-commercial" element={<FreeZoneCommercialAdmin />} />
+    <Route path="/admin/freezone-commercial" element={<FreeZoneCommercialAdminV2 />} />
     <Route path="/privacy" element={<Privacy />} />
     <Route path="/terms" element={<Terms />} />
     <Route path="/refund" element={<Refund />} />
