@@ -5,6 +5,14 @@ import { Gift, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 
+const MAX_SCRATCH_DISCOUNT = 3;
+
+function normalizeReward(value) {
+  const parsed = value && typeof value === 'object' ? value : {};
+  const discount = Math.min(MAX_SCRATCH_DISCOUNT, Math.max(1, Number(parsed.discount) || 1));
+  return { discount, code: parsed.code || `SMARTSAVE${discount}` };
+}
+
 export default function ScratchCard() {
   const [show, setShow] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -15,16 +23,30 @@ export default function ScratchCard() {
   const [reward] = useState(() => {
     const existing = localStorage.getItem('ssu_scratch_coupon');
     if (existing) {
-      try { return JSON.parse(existing); } catch {}
+      try { return normalizeReward(JSON.parse(existing)); } catch {}
     }
     const options = [
-      { discount: 5, code: 'SMARTSAVE5' },
-      { discount: 8, code: 'SMARTSAVE8' },
-      { discount: 10, code: 'SMARTSAVE10' },
-      { discount: 12, code: 'SMARTSAVE12' },
+      { discount: 1, code: 'SMARTSAVE1' },
+      { discount: 2, code: 'SMARTSAVE2' },
+      { discount: 3, code: 'SMARTSAVE3' },
     ];
     return options[Math.floor(Math.random() * options.length)];
   });
+
+  useEffect(() => {
+    // Remove any legacy browser-stored reward above the current maximum.
+    const stored = localStorage.getItem('ssu_scratch_coupon');
+    if (stored) {
+      try {
+        const safe = normalizeReward(JSON.parse(stored));
+        localStorage.setItem('ssu_scratch_coupon', JSON.stringify(safe));
+        localStorage.setItem('ssu_scratch_coupon_code', safe.code);
+      } catch {
+        localStorage.removeItem('ssu_scratch_coupon');
+        localStorage.removeItem('ssu_scratch_coupon_code');
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (localStorage.getItem('ssu_scratch_seen')) return;
