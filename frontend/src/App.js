@@ -33,160 +33,87 @@ const AuthCallback = lazy(() => import('./pages/AuthCallback'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const AdminPanel = lazy(() => import('./pages/AdminPanel'));
 const AgentCommissionAdmin = lazy(() => import('./pages/AgentCommissionAdmin'));
+const FreeZoneCommercialAdmin = lazy(() => import('./pages/FreeZoneCommercialAdmin'));
 const Activities = lazy(() => import('./pages/Activities'));
 
 function useRevealOnScroll() {
   const location = useLocation();
-
   useEffect(() => {
     let observer;
     const attach = () => {
       const elements = document.querySelectorAll('.reveal:not(.in)');
       if (!elements.length) return;
-
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: '80px 0px' }
-      );
-
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '80px 0px' });
       elements.forEach((element) => observer.observe(element));
     };
-
     const timer = window.setTimeout(attach, 80);
-    return () => {
-      window.clearTimeout(timer);
-      if (observer) observer.disconnect();
-    };
+    return () => { window.clearTimeout(timer); if (observer) observer.disconnect(); };
   }, [location.pathname]);
 }
 
 function Shell({ children }) {
   const location = useLocation();
-
   useRevealOnScroll();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
+  useEffect(() => { window.scrollTo(0, 0); }, [location.pathname]);
   return <>{children}</>;
 }
 
-function PageLoader() {
-  return <div className="min-h-[45vh] grid place-items-center text-slate-500">Loading…</div>;
-}
+function PageLoader() { return <div className="min-h-[45vh] grid place-items-center text-slate-500">Loading…</div>; }
 
 function App() {
   useEffect(() => {
     const removeExternalBuilderWatermark = () => {
-      const selectors = [
-        '[id*="emergent" i]',
-        '[class*="emergent" i]',
-        '[href*="emergent" i]',
-        '[src*="emergent" i]',
-        '[aria-label*="emergent" i]',
-        '[title*="emergent" i]',
-        '[data-testid*="emergent" i]',
-        '[data-emergent]',
-        '[id*="watermark" i]',
-        '[class*="watermark" i]',
-      ];
-
-      document.querySelectorAll(selectors.join(',')).forEach((node) => {
-        if (!node.closest('header,footer,[data-smartsetup-widget]')) {
-          node.remove();
-        }
-      });
-
+      const selectors = ['[id*="emergent" i]','[class*="emergent" i]','[href*="emergent" i]','[src*="emergent" i]','[aria-label*="emergent" i]','[title*="emergent" i]','[data-testid*="emergent" i]','[data-emergent]','[id*="watermark" i]','[class*="watermark" i]'];
+      document.querySelectorAll(selectors.join(',')).forEach((node) => { if (!node.closest('header,footer,[data-smartsetup-widget]')) node.remove(); });
       document.querySelectorAll('a,button,div,span,iframe').forEach((node) => {
-        const text = (
-          node.textContent ||
-          node.getAttribute('aria-label') ||
-          node.getAttribute('title') ||
-          node.getAttribute('src') ||
-          ''
-        ).trim();
-
-        if (/emergent|full stack website|built with/i.test(text) && !node.closest('header,footer,[data-smartsetup-widget]')) {
-          node.remove();
-        }
+        const text = (node.textContent || node.getAttribute('aria-label') || node.getAttribute('title') || node.getAttribute('src') || '').trim();
+        if (/emergent|full stack website|built with/i.test(text) && !node.closest('header,footer,[data-smartsetup-widget]')) node.remove();
       });
-
-      if (/emergent|full stack website/i.test(document.title)) {
-        document.title = 'SmartSetupUAE | AI Business Setup UAE';
-      }
+      if (/emergent|full stack website/i.test(document.title)) document.title = 'SmartSetupUAE | AI Business Setup UAE';
     };
-
     document.title = 'SmartSetupUAE | AI Business Setup UAE';
     removeExternalBuilderWatermark();
-
     const observer = new MutationObserver(removeExternalBuilderWatermark);
     observer.observe(document.documentElement, { childList: true, subtree: true });
-
     const timers = [120, 800, 1800].map((delay) => window.setTimeout(removeExternalBuilderWatermark, delay));
-
-    return () => {
-      observer.disconnect();
-      timers.forEach(window.clearTimeout);
-    };
+    return () => { observer.disconnect(); timers.forEach(window.clearTimeout); };
   }, []);
 
-  return (
-    <div className="App">
-      <AuthProvider>
-        <BrowserRouter>
-          <Shell>
-            <ErrorBoundary>
-              <Suspense fallback={<PageLoader />}>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/free-zones" element={<FreeZones />} />
-                  <Route path="/free-zones/:slug" element={<FreeZoneDetail />} />
-                  <Route path="/mainland" element={<Mainland />} />
-                  <Route path="/mainland-vs-freezone" element={<MainlandVsFreeZone />} />
-                  <Route path="/visa-services" element={<VisaServices />} />
-                  <Route path="/golden-visa" element={<GoldenVisa />} />
-                  <Route path="/calculator" element={<CostCalculator />} />
-                  <Route path="/checkout" element={<Checkout />} />
-                  <Route path="/checkout/success" element={<CheckoutSuccess />} />
-                  <Route path="/ai-search" element={<AISearchPage />} />
-                  <Route path="/compare" element={<Compare />} />
-                  <Route path="/services/:slug" element={<ServicePage />} />
-                  <Route path="/faqs" element={<FAQs />} />
-                  <Route path="/founder-club" element={<FounderClub />} />
-                  <Route path="/activities" element={<Activities />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/consultation" element={<Consultation />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/auth/callback" element={<AuthCallback />} />
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/admin" element={<AdminPanel />} />
-                  <Route path="/admin/commission" element={<AgentCommissionAdmin />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="/refund" element={<Refund />} />
-                  <Route path="/data-deletion" element={<DataDeletion />} />
-                </Routes>
-              </Suspense>
-            </ErrorBoundary>
-            <WhatsAppFloat />
-            <ChatBot />
-            <UniversalLeadEnquiry />
-            <ScratchCard />
-          </Shell>
-        </BrowserRouter>
-        <Toaster />
-      </AuthProvider>
-    </div>
-  );
+  return <div className="App"><AuthProvider><BrowserRouter><Shell><ErrorBoundary><Suspense fallback={<PageLoader />}><Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/free-zones" element={<FreeZones />} />
+    <Route path="/free-zones/:slug" element={<FreeZoneDetail />} />
+    <Route path="/mainland" element={<Mainland />} />
+    <Route path="/mainland-vs-freezone" element={<MainlandVsFreeZone />} />
+    <Route path="/visa-services" element={<VisaServices />} />
+    <Route path="/golden-visa" element={<GoldenVisa />} />
+    <Route path="/calculator" element={<CostCalculator />} />
+    <Route path="/checkout" element={<Checkout />} />
+    <Route path="/checkout/success" element={<CheckoutSuccess />} />
+    <Route path="/ai-search" element={<AISearchPage />} />
+    <Route path="/compare" element={<Compare />} />
+    <Route path="/services/:slug" element={<ServicePage />} />
+    <Route path="/faqs" element={<FAQs />} />
+    <Route path="/founder-club" element={<FounderClub />} />
+    <Route path="/activities" element={<Activities />} />
+    <Route path="/blog" element={<Blog />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/consultation" element={<Consultation />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/auth/callback" element={<AuthCallback />} />
+    <Route path="/dashboard" element={<Dashboard />} />
+    <Route path="/admin" element={<AdminPanel />} />
+    <Route path="/admin/commission" element={<AgentCommissionAdmin />} />
+    <Route path="/admin/freezone-commercial" element={<FreeZoneCommercialAdmin />} />
+    <Route path="/privacy" element={<Privacy />} />
+    <Route path="/terms" element={<Terms />} />
+    <Route path="/refund" element={<Refund />} />
+    <Route path="/data-deletion" element={<DataDeletion />} />
+  </Routes></Suspense></ErrorBoundary><WhatsAppFloat /><ChatBot /><UniversalLeadEnquiry /><ScratchCard /></Shell></BrowserRouter><Toaster /></AuthProvider></div>;
 }
 
 export default App;
